@@ -4,8 +4,15 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int san = 7;
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +22,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primaryColor: Colors.amberAccent),
       home: Scaffold(
         appBar: AppBar(title: Text('Flutter App')),
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text('Hello'),
               Text(
-                '0',
+                '$san',
                 style: TextStyle(
                   fontSize: 38,
                 ),
@@ -31,7 +38,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              san = san + 1;
+            });
+          },
           child: const Icon(
             Icons.add,
           ),
