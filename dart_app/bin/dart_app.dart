@@ -29,3 +29,22 @@ void jetiAta({
 }) {
   print('1, 2, 3, 4, 5, 6, 7');
 }
+
+void main33() {
+  calc(34, 23, '-');
+  calc(34, 23, '+');
+  calc(34, 23, '*');
+  calc(34, 23, '/');
+}
+
+void calc(num s1, num s2, String oper) {
+  if (oper == '+') {
+    print('$s1+$s2 = ${s1 + s2}');
+  } else if (oper == '-') {
+    print('$s1-$s2 = ${s1 - s2}');
+  } else if (oper == '*') {
+    print('$s1*$s2 = ${s1 * s2}');
+  } else if (oper == '/') {
+    print('$s1*$s2 = ${s1 / s2}');
+  }
+}
