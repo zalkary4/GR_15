@@ -7,13 +7,33 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  int san = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter demo',
       theme: ThemeData(useMaterial3: true),
+      home: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Data'),
+            Text('$san'),
+          ],
+        ),
+        appBar: AppBar(
+          title: const Text(
+            'GR 15',
+            style: TextStyle(color: Colors.black),
+          ),
+          backgroundColor: Colors.amberAccent,
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {},
+        ),
+      ),
     );
   }
 }
