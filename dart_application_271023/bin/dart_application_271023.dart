@@ -5,13 +5,13 @@ import 'dart:io';
 import 'ddd.dart';
 //// users list
 
-// Map user = {
-//   'name': 'User1',
-//   'lastName': 'User1User',
-//   'age': 33,
-//   'login': 'user@gmail.com',
-//   'password': '1234',
-// };
+Map user = {
+  'name': 'User1',
+  'lastName': 'User1User',
+  'age': 33,
+  'login': 'user@gmail.com',
+  'password': '1234',
+};
 
 ////
 void main(List<String> arguments) {
@@ -21,7 +21,7 @@ void main(List<String> arguments) {
 
 void authentification() {
   // welcome
-  print('Welcome');
+  print('Welcome!!!');
 
   // log/registr
   print('Kattaluu uchun "Y". Kiruu uchun "N" jazynyz');
