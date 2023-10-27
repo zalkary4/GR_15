@@ -1,7 +1,17 @@
 import 'package:dart_application_271023/dart_application_271023.dart'
     as dart_application_271023;
 import 'dart:io';
+//// users list
 
+Map user = {
+  'name': 'User1',
+  'lastName': 'User1User',
+  'age': 33,
+  'login': 'user@gmail.com',
+  'password': '1234',
+};
+
+////
 void main(List<String> arguments) {
   // print('Hello world: ${dart_application_271023.calculate()}!');
   authentification();
@@ -43,7 +53,19 @@ void authentification() {
     print('your age is $password');
     print('Done');
   } else if (value == 'N') {
-    print('Kiruu bolumunde');
+    print('Kiruu bolumundo');
+
+    stdout.write('Enter your login: ');
+    var login = stdin.readLineSync();
+
+    stdout.write('Password your login: ');
+    var password = stdin.readLineSync();
+
+    if (login == user['login'] && password == user['password']) {
+      print('User name is correct');
+    } else {
+      print('Wrong login or password');
+    }
   } else {
     print(value);
   }
