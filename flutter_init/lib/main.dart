@@ -6,9 +6,16 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   int san = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +38,14 @@ class MyApp extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
-          onPressed: () {},
+          onPressed: () {
+            setState(
+              () {
+                san++;
+              },
+            );
+            // print(san);
+          },
         ),
       ),
     );
