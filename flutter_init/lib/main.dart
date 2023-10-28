@@ -20,12 +20,14 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter DEMO',
       theme: ThemeData(useMaterial3: true),
       home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Data'),
-            Text('$san'),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Data'),
+              Text('$san'),
+            ],
+          ),
         ),
         appBar: AppBar(
           title: const Text(
@@ -34,15 +36,28 @@ class _MyAppState extends State<MyApp> {
           ),
           backgroundColor: Colors.amberAccent,
         ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            setState(
-              () {
-                san++;
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              child: const Icon(Icons.add),
+              onPressed: () {
+                setState(() {
+                  san++;
+                });
+                print(san);
               },
-            );
-          },
+            ),
+            FloatingActionButton(
+              child: const Icon(Icons.remove),
+              onPressed: () {
+                setState(() {
+                  san--;
+                });
+                print(san);
+              },
+            ),
+          ],
         ),
       ),
     );
