@@ -17,6 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter DEMO',
       theme: ThemeData(useMaterial3: true),
       home: Scaffold(
@@ -30,6 +31,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         appBar: AppBar(
+          centerTitle: true,
           title: const Text(
             'GR 15',
             style: TextStyle(color: Colors.black),
@@ -48,6 +50,7 @@ class _MyAppState extends State<MyApp> {
                 print(san);
               },
             ),
+            const SizedBox(height: 10),
             FloatingActionButton(
               child: const Icon(Icons.remove),
               onPressed: () {
