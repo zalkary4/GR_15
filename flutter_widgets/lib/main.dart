@@ -40,9 +40,15 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const Text('Rich'),
+            const Text(
+              'Rich',
+              style: TextStyle(fontSize: 46),
+            ),
             Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThX5BgHRR1N_HZgIq_TALqgY7t6fuyR9Qo7Q&usqp=CAU')
+              'https://pngfre.com/wp-content/uploads/diamond-png-image-pngfre-3-1024x620.png',
+              width: 300,
+              height: 300,
+            ),
           ],
         ),
       ),
