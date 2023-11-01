@@ -37,12 +37,14 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.brown,
       ),
-      body: Column(
-        children: [
-          Text('Rich'),
-          Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThX5BgHRR1N_HZgIq_TALqgY7t6fuyR9Qo7Q&usqp=CAU')
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            const Text('Rich'),
+            Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThX5BgHRR1N_HZgIq_TALqgY7t6fuyR9Qo7Q&usqp=CAU')
+          ],
+        ),
       ),
     );
   }
