@@ -34,7 +34,12 @@ class MyHomePage extends StatelessWidget {
         shadowColor: Colors.black,
         backgroundColor: Colors.brown,
         title: const Text('Task 3', style: TextStyle(color: Colors.black)),
-        actions: [Icon(Icons.search)],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
+            child: Icon(Icons.search),
+          )
+        ],
       ),
       body: Center(
         child: Column(
@@ -45,7 +50,6 @@ class MyHomePage extends StatelessWidget {
             Image.network(
               'https://pngfre.com/wp-content/uploads/diamond-png-image-pngfre-3-1024x620.png',
               width: 300,
-              height: 300,
             ),
           ],
         ),
