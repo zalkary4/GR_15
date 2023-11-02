@@ -28,9 +28,10 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 102, 215, 106),
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text(
+        title: const Text(
           'Task 4',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
