@@ -54,9 +54,45 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Container(height: 50, color: Colors.white),
+            Container(
+              height: 50,
+              width: double.infinity,
+              color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.phone,
+                    size: 30,
+                  ),
+                  SizedBox(width: 15),
+                  Text(
+                    '+996 777 124 456',
+                    style: TextStyle(fontSize: 22),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(height: 30),
-            Container(height: 50, color: Colors.white),
+            Container(
+              height: 50,
+              width: double.infinity,
+              color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.mail_rounded,
+                    size: 30,
+                  ),
+                  SizedBox(width: 15),
+                  Text(
+                    'Ivanov Ivan',
+                    style: TextStyle(fontSize: 22),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
