@@ -39,11 +39,10 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Rich',
-              style: TextStyle(fontSize: 46),
-            ),
+            const Text('Rich', style: TextStyle(fontSize: 46)),
+            // const SizedBox(height: 2),
             Image.network(
               'https://pngfre.com/wp-content/uploads/diamond-png-image-pngfre-3-1024x620.png',
               width: 300,
