@@ -42,9 +42,18 @@ class MyHomePage extends StatelessWidget {
           children: [
             const Text(
               'Flutter App',
-              style: TextStyle(color: Colors.white, fontSize: 28),
+              style: TextStyle(color: Colors.white, fontSize: 48),
             ),
-            const Text('Flutter developper'),
+            const Text(
+              'Flutter developper',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 20),
             Container(height: 50, color: Colors.white),
             const SizedBox(height: 30),
             Container(height: 50, color: Colors.white),
