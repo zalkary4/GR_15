@@ -64,11 +64,12 @@ class MyHomePage extends StatelessWidget {
                   Icon(
                     Icons.phone,
                     size: 30,
+                    color: Color(0xff056c5c),
                   ),
                   SizedBox(width: 15),
                   Text(
                     '+996 777 124 456',
-                    style: TextStyle(fontSize: 22),
+                    style: TextStyle(fontSize: 22, color: Color(0xff056c5c)),
                   ),
                 ],
               ),
@@ -81,14 +82,11 @@ class MyHomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.mail_rounded,
-                    size: 30,
-                  ),
+                  Icon(Icons.mail_rounded, size: 30, color: Color(0xff056c5c)),
                   SizedBox(width: 15),
                   Text(
                     'Ivanov Ivan',
-                    style: TextStyle(fontSize: 22),
+                    style: TextStyle(fontSize: 22, color: Color(0xff056c5c)),
                   ),
                 ],
               ),
