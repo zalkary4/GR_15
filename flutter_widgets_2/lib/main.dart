@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget {
               height: 50,
               width: double.infinity,
               color: Colors.white,
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
@@ -79,7 +79,7 @@ class MyHomePage extends StatelessWidget {
               height: 50,
               width: double.infinity,
               color: Colors.white,
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.mail_rounded, size: 30, color: Color(0xff056c5c)),
