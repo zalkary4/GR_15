@@ -36,7 +36,18 @@ class MyHomePage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body: Column(),
+      body: Column(
+        children: [
+          Text('flutter Appp'),
+          Text('Flutter developper'),
+          Container(
+            height: 50,
+          ),
+          Container(
+            height: 50,
+          ),
+        ],
+      ),
     );
   }
 }
