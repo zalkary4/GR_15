@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePageLess extends StatelessWidget {
-  const HomePageLess({super.key});
-
+  HomePageLess({super.key});
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,9 +14,29 @@ class HomePageLess extends StatelessWidget {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Card(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('0'),
+              padding: EdgeInsets.symmetric(
+                horizontal: 150,
+                vertical: 20,
+              ),
+              child: Text(
+                '0',
+                style: TextStyle(fontSize: 24),
+              ),
             ),
+          ),
+          const SizedBox(height: 30),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Icon(Icons.remove),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Icon(Icons.add),
+              )
+            ],
           )
         ]),
       ),
