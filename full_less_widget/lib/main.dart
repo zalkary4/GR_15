@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:full_less_widget/home1.dart';
+import 'package:full_less_widget/home2.dart';
 
 void main() {
   runApp(const MyApp());
