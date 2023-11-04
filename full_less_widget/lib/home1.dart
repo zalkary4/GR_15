@@ -30,6 +30,7 @@ class _CounterRebuildState extends State<CounterRebuild> {
   int count = 0;
   @override
   Widget build(BuildContext context) {
+    print('great State:  $count++');
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Card(
         child: Padding(
