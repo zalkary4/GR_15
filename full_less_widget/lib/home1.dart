@@ -14,12 +14,12 @@ class HomePageLess extends StatelessWidget {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Card(
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 150,
                 vertical: 20,
               ),
               child: Text(
-                '0',
+                'San: $count',
                 style: TextStyle(fontSize: 24),
               ),
             ),
@@ -29,11 +29,17 @@ class HomePageLess extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  count--;
+                  print(count);
+                },
                 child: Icon(Icons.remove),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  count++;
+                  print(count);
+                },
                 child: Icon(Icons.add),
               )
             ],
