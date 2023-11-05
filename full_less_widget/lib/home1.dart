@@ -8,7 +8,7 @@ class HomePageLess extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text('Less Widget'),
+        title: const Text('State Less Widget'),
       ),
       body: const Center(
         child: CounterRebuild(),
