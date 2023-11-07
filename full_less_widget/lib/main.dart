@@ -28,7 +28,16 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: const Text('State Less Widget'),
+          title: const Text('Flutter'),
+          actions: [
+            IconButton(
+              onPressed: () {
+                isDark = !isDark;
+                setState(() {});
+              },
+              icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+            )
+          ],
         ),
       ),
     );
