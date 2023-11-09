@@ -42,25 +42,50 @@ class _HomePageBodyState extends State<HomePageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: InkWell(
-        onTap: changeDice,
-        child: Row(children: [
-          const SizedBox(width: 20),
-          Expanded(
-            child: Image.asset(
-              'assets/icons/dice$firstDiceIndex.png',
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Center(
+          child: InkWell(
+            onTap: changeDice,
+            child: Row(children: [
+              const SizedBox(width: 20),
+              Expanded(
+                child: Image.asset(
+                  'assets/icons/dice$firstDiceIndex.png',
+                ),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: Image.asset(
+                  'assets/icons/dice$secondDiceIndex.png',
+                ),
+              ),
+              const SizedBox(width: 20),
+            ]),
           ),
-          const SizedBox(width: 20),
-          Expanded(
-            child: Image.asset(
-              'assets/icons/dice$secondDiceIndex.png',
-            ),
+        ),
+        Center(
+          child: InkWell(
+            onTap: changeDice,
+            child: Row(children: [
+              const SizedBox(width: 20),
+              Expanded(
+                child: Image.asset(
+                  'assets/icons/dice$firstDiceIndex.png',
+                ),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: Image.asset(
+                  'assets/icons/dice$secondDiceIndex.png',
+                ),
+              ),
+              const SizedBox(width: 20),
+            ]),
           ),
-          const SizedBox(width: 20),
-        ]),
-      ),
+        ),
+      ],
     );
   }
 }
