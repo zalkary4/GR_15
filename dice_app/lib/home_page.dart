@@ -30,10 +30,11 @@ class HomePageBody extends StatefulWidget {
 }
 
 class _HomePageBodyState extends State<HomePageBody> {
-  int firstDiceIndex = 5;
+  int firstDiceIndex = 1;
   int secondDiceIndex = 2;
   Random random = Random();
   void changeDice() {
+    // firstDiceIndex++;
     firstDiceIndex = random.nextInt(6) + 1;
     secondDiceIndex = random.nextInt(6) + 1;
     setState(() {});
