@@ -18,6 +18,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     clientSecondIndex = random.nextInt(6) + 1;
     clientSum = clientSum + clientFirstIndex + clientSecondIndex;
     setState(() {});
+    result();
   }
 
 // app
@@ -29,9 +30,64 @@ class _HomePageBodyState extends State<HomePageBody> {
     appSecondIndex = random.nextInt(6) + 1;
     appSum = appSum + appFirstIndex + appSecondIndex;
     setState(() {});
+    result();
   }
 
   Random random = Random();
+
+  void result() {
+    if (clientSum >= 50) {
+      showDialog(
+        context: context,
+        builder: (ctx) {
+          return AlertDialog(
+            title: const Text('Good job!!!'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  clientFirstIndex = 1;
+                  clientSecondIndex = 1;
+                  clientSum = 0;
+
+                  appFirstIndex = 1;
+                  appSecondIndex = 1;
+                  appSum = 0;
+                  Navigator.pop(context);
+                  setState(() {});
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    } else if (appSum >= 50) {
+      showDialog(
+        context: context,
+        builder: (ctx) {
+          return AlertDialog(
+            title: const Text('Ups!!!'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  clientFirstIndex = 1;
+                  clientSecondIndex = 1;
+                  clientSum = 0;
+
+                  appFirstIndex = 1;
+                  appSecondIndex = 1;
+                  appSum = 0;
+                  Navigator.pop(context);
+                  setState(() {});
+                },
+                child: const Text('You lost!'),
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
 
   // void changeDice() {
   // firstDiceIndex++;
