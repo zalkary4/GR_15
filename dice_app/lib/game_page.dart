@@ -45,15 +45,7 @@ class _HomePageBodyState extends State<HomePageBody> {
             actions: [
               TextButton(
                 onPressed: () {
-                  clientFirstIndex = 1;
-                  clientSecondIndex = 1;
-                  clientSum = 0;
-
-                  appFirstIndex = 1;
-                  appSecondIndex = 1;
-                  appSum = 0;
-                  Navigator.pop(context);
-                  setState(() {});
+                  resetAll;
                 },
                 child: const Text('OK'),
               ),
@@ -70,15 +62,7 @@ class _HomePageBodyState extends State<HomePageBody> {
             actions: [
               TextButton(
                 onPressed: () {
-                  clientFirstIndex = 1;
-                  clientSecondIndex = 1;
-                  clientSum = 0;
-
-                  appFirstIndex = 1;
-                  appSecondIndex = 1;
-                  appSum = 0;
-                  Navigator.pop(context);
-                  setState(() {});
+                  resetAll();
                 },
                 child: const Text('You lost!'),
               ),
@@ -89,6 +73,17 @@ class _HomePageBodyState extends State<HomePageBody> {
     }
   }
 
+  void resetAll() {
+    clientFirstIndex = 1;
+    clientSecondIndex = 1;
+    clientSum = 0;
+
+    appFirstIndex = 1;
+    appSecondIndex = 1;
+    appSum = 0;
+    Navigator.pop(context);
+    setState(() {});
+  }
   // void changeDice() {
   // firstDiceIndex++;
   // clientFirstIndex = random.nextInt(6) + 1;
