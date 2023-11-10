@@ -1,6 +1,4 @@
-import 'dart:math';
-
-import 'package:dice_app/home_page.dart';
+import 'package:dice_app/game_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePagesecond extends StatelessWidget {
