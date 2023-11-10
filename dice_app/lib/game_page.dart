@@ -19,6 +19,9 @@ class _HomePageBodyState extends State<HomePageBody> {
     clientSum = clientSum + clientFirstIndex + clientSecondIndex;
     setState(() {});
     result();
+    if (clientSum < 50 || appSum < 50) {
+      manageAction();
+    }
   }
 
 // app
@@ -33,6 +36,18 @@ class _HomePageBodyState extends State<HomePageBody> {
     result();
   }
 
+  void manageAction() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(content: CircularProgressIndicator());
+        });
+    appAction();
+    Future.delayed(Duration(seconds: 1))
+        .whenComplete(() => Navigator.pop(context));
+  }
+
+  ///
   Random random = Random();
 
   void result() {
@@ -53,6 +68,7 @@ class _HomePageBodyState extends State<HomePageBody> {
           );
         },
       );
+      return;
     } else if (appSum >= 50) {
       showDialog(
         context: context,
@@ -71,6 +87,7 @@ class _HomePageBodyState extends State<HomePageBody> {
         },
       );
     }
+    return;
   }
 
   void resetAll() {
@@ -126,17 +143,11 @@ class _HomePageBodyState extends State<HomePageBody> {
             children: [
               const SizedBox(width: 20),
               Expanded(
-                child: InkWell(
-                  onTap: appAction,
-                  child: Image.asset('assets/icons/dice$appFirstIndex.png'),
-                ),
+                child: Image.asset('assets/icons/dice$appFirstIndex.png'),
               ),
               const SizedBox(width: 20),
               Expanded(
-                child: InkWell(
-                  onTap: appAction,
-                  child: Image.asset('assets/icons/dice$appSecondIndex.png'),
-                ),
+                child: Image.asset('assets/icons/dice$appSecondIndex.png'),
               ),
               const SizedBox(width: 20),
             ],
