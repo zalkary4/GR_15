@@ -22,6 +22,20 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      body: Column(
+        children: [
+          const Spacer(),
+          Row(
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(fixedSize: const Size(60, 250)),
+                onPressed: () {},
+                child: const Text('f1'),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
