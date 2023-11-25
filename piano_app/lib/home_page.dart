@@ -54,7 +54,8 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 130,
                 child: ListView(
-                  children: [
+                  scrollDirection: Axis.horizontal,
+                  children: const [
                     PianoBlackButton(),
                     PianoBlackButton(),
                     PianoBlackButton(),
