@@ -26,30 +26,68 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           const Spacer(),
-          SizedBox(
-            height: 260,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const [
-                PianoWhiteButton(text: 'f1'),
-                PianoWhiteButton(text: 'f2'),
-                PianoWhiteButton(text: 'f3'),
-                PianoWhiteButton(text: 'f4'),
-                PianoWhiteButton(text: 'f5'),
-                PianoWhiteButton(text: 'f6'),
-                PianoWhiteButton(text: 'f7'),
-                PianoWhiteButton(text: 'f1'),
-                PianoWhiteButton(text: 'f2'),
-                PianoWhiteButton(text: 'f3'),
-                PianoWhiteButton(text: 'f4'),
-                PianoWhiteButton(text: 'f5'),
-                PianoWhiteButton(text: 'f6'),
-                PianoWhiteButton(text: 'f7'),
-              ],
-            ),
+          Stack(
+            children: [
+              SizedBox(
+                height: 260,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    // PianoBlackButton(),
+                    PianoWhiteButton(text: 'f1'),
+                    PianoWhiteButton(text: 'f2'),
+                    PianoWhiteButton(text: 'f3'),
+                    PianoWhiteButton(text: 'f4'),
+                    PianoWhiteButton(text: 'f5'),
+                    PianoWhiteButton(text: 'f6'),
+                    PianoWhiteButton(text: 'f7'),
+                    PianoWhiteButton(text: 'f1'),
+                    PianoWhiteButton(text: 'f2'),
+                    PianoWhiteButton(text: 'f3'),
+                    PianoWhiteButton(text: 'f4'),
+                    PianoWhiteButton(text: 'f5'),
+                    PianoWhiteButton(text: 'f6'),
+                    PianoWhiteButton(text: 'f7'),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 130,
+                child: ListView(
+                  children: [
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                  ],
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 8)
         ],
+      ),
+    );
+  }
+}
+
+class PianoBlackButton extends StatelessWidget {
+  const PianoBlackButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      child: const Text('f1'),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.black,
+        minimumSize: Size(60, 130),
+        fixedSize: Size(60, 130),
+        maximumSize: Size(60, 130),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
       ),
     );
   }
