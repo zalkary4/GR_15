@@ -26,6 +26,32 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           const Spacer(),
+          ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              SizedBox(
+                height: 260,
+                child: Stack(
+                  children: [
+                    PianoWhiteButton(text: 'f1'),
+                    PianoWhiteButton(text: 'f2'),
+                    PianoWhiteButton(text: 'f3'),
+                    PianoWhiteButton(text: 'f4'),
+                    PianoWhiteButton(text: 'f5'),
+                    PianoWhiteButton(text: 'f6'),
+                    PianoWhiteButton(text: 'f7'),
+                    PianoWhiteButton(text: 'f1'),
+                    PianoWhiteButton(text: 'f2'),
+                    PianoWhiteButton(text: 'f3'),
+                    PianoWhiteButton(text: 'f4'),
+                    PianoWhiteButton(text: 'f5'),
+                    PianoWhiteButton(text: 'f6'),
+                    PianoWhiteButton(text: 'f7'),
+                  ],
+                ),
+              )
+            ],
+          ),
           Stack(
             children: [
               SizedBox(
