@@ -15,7 +15,7 @@ class PianoWhiteButton extends StatelessWidget {
           padding: const EdgeInsets.all(0),
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
-          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          textStyle: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           fixedSize: const Size(80, 260),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),

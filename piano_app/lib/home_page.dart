@@ -112,13 +112,19 @@ class PianoBlackButton extends StatelessWidget {
               ),
             ),
             onPressed: () {},
-            child: Text(
-              text,
-              style: const TextStyle(
-                fontSize: 17,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  text,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8)
+              ],
             ),
           ),
         ),
