@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             height: 260,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: [
+              children: const [
                 Stack(
                   children: [
                     Row(
@@ -52,19 +52,20 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     Row(
-                      children: const [
-                        PianoBlackButton(
-                          text: 'f1',
-                          visible: false,
-                        ),
-                        PianoBlackButton(text: 'f2'),
-                        PianoBlackButton(
-                          text: 'f3',
-                          visible: false,
-                        ),
-                        PianoBlackButton(text: 'f4'),
-                        PianoBlackButton(text: 'f5'),
-                        PianoBlackButton(text: 'f6'),
+                      children: [
+                        PianoBlackButton(text: 'f1', leftMargin: 55),
+                        PianoBlackButton(text: 'f2', leftMargin: 25),
+                        PianoBlackButton(text: '', visible: false),
+                        PianoBlackButton(text: 'f4', leftMargin: 45),
+                        PianoBlackButton(text: 'f5', leftMargin: 25),
+                        PianoBlackButton(text: 'f6', leftMargin: 25),
+                        PianoBlackButton(text: '', visible: false),
+                        PianoBlackButton(text: 'f2', leftMargin: 45),
+                        PianoBlackButton(text: 'f2', leftMargin: 26),
+                        PianoBlackButton(text: '', visible: false),
+                        PianoBlackButton(text: 'f4', leftMargin: 45),
+                        PianoBlackButton(text: 'f5', leftMargin: 25),
+                        PianoBlackButton(text: 'f6', leftMargin: 25),
                       ],
                     )
                   ],
@@ -84,27 +85,40 @@ class PianoBlackButton extends StatelessWidget {
     super.key,
     required this.text,
     this.visible = true,
+    this.leftMargin = 0,
   });
   final String text;
   final bool visible;
+  final double leftMargin;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 130,
-      width: 80,
-      child: Visibility(
-        visible: true,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text(text),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
-            // minimumSize: Size(60, 130),
-            fixedSize: Size(60, 130),
-            // maximumSize: Size(60, 130),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4),
+    return Padding(
+      padding: EdgeInsets.only(left: leftMargin),
+      child: SizedBox(
+        height: 160,
+        width: 60,
+        child: Visibility(
+          visible: visible,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              fixedSize: const Size(60, 160),
+              padding: EdgeInsets.all(0),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(4),
+                ),
+              ),
+            ),
+            onPressed: () {},
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 17,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),

@@ -12,6 +12,7 @@ class PianoWhiteButton extends StatelessWidget {
       padding: const EdgeInsets.only(left: 4),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.all(0),
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
           textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
