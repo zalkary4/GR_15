@@ -4,6 +4,8 @@ import 'package:piano_app/app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  /// горизонталь распол устр
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeRight,
     DeviceOrientation.landscapeLeft,
