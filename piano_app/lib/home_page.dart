@@ -26,12 +26,12 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           const Spacer(),
-          ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              SizedBox(
-                height: 260,
-                child: Stack(
+          SizedBox(
+            height: 260,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Row(
                   children: [
                     PianoWhiteButton(text: 'f1'),
                     PianoWhiteButton(text: 'f2'),
@@ -48,51 +48,51 @@ class _HomePageState extends State<HomePage> {
                     PianoWhiteButton(text: 'f6'),
                     PianoWhiteButton(text: 'f7'),
                   ],
+                )
+              ],
+            ),
+          ),
+          Stack(
+            children: [
+              SizedBox(
+                height: 260,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    // PianoBlackButton(),
+                    PianoWhiteButton(text: 'f1'),
+                    PianoWhiteButton(text: 'f2'),
+                    PianoWhiteButton(text: 'f3'),
+                    PianoWhiteButton(text: 'f4'),
+                    PianoWhiteButton(text: 'f5'),
+                    PianoWhiteButton(text: 'f6'),
+                    PianoWhiteButton(text: 'f7'),
+                    PianoWhiteButton(text: 'f1'),
+                    PianoWhiteButton(text: 'f2'),
+                    PianoWhiteButton(text: 'f3'),
+                    PianoWhiteButton(text: 'f4'),
+                    PianoWhiteButton(text: 'f5'),
+                    PianoWhiteButton(text: 'f6'),
+                    PianoWhiteButton(text: 'f7'),
+                  ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 160,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    SizedBox(width: 55),
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                    PianoBlackButton(),
+                  ],
+                ),
+              ),
             ],
           ),
-          // Stack(
-          //   children: [
-          //     SizedBox(
-          //       height: 260,
-          //       child: ListView(
-          //         scrollDirection: Axis.horizontal,
-          //         children: const [
-          //           // PianoBlackButton(),
-          //           PianoWhiteButton(text: 'f1'),
-          //           PianoWhiteButton(text: 'f2'),
-          //           PianoWhiteButton(text: 'f3'),
-          //           PianoWhiteButton(text: 'f4'),
-          //           PianoWhiteButton(text: 'f5'),
-          //           PianoWhiteButton(text: 'f6'),
-          //           PianoWhiteButton(text: 'f7'),
-          //           PianoWhiteButton(text: 'f1'),
-          //           PianoWhiteButton(text: 'f2'),
-          //           PianoWhiteButton(text: 'f3'),
-          //           PianoWhiteButton(text: 'f4'),
-          //           PianoWhiteButton(text: 'f5'),
-          //           PianoWhiteButton(text: 'f6'),
-          //           PianoWhiteButton(text: 'f7'),
-          //         ],
-          //       ),
-          //     ),
-          //     SizedBox(
-          //       height: 160,
-          //       child: ListView(
-          //         scrollDirection: Axis.horizontal,
-          //         children: const [
-          //           SizedBox(width: 55),
-          //           PianoBlackButton(),
-          //           PianoBlackButton(),
-          //           PianoBlackButton(),
-          //           PianoBlackButton(),
-          //           PianoBlackButton(),
-          //         ],
-          //       ),
-          //     ),
-          //   ],
-          // ),
           const SizedBox(height: 8)
         ],
       ),
@@ -107,7 +107,7 @@ class PianoBlackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
-      child: const Text('f1'),
+      child: Text('f1'),
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.black,
         minimumSize: Size(60, 130),
