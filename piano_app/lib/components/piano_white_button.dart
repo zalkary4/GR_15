@@ -12,7 +12,8 @@ class PianoWhiteButton extends StatelessWidget {
       padding: const EdgeInsets.only(left: 4),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.only(bottom: 8),
+          alignment: Alignment.bottomCenter,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
           textStyle: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -22,13 +23,7 @@ class PianoWhiteButton extends StatelessWidget {
           ),
         ),
         onPressed: () {},
-        child: Column(
-          children: [
-            const Spacer(),
-            Text(text),
-            const SizedBox(height: 10),
-          ],
-        ),
+        child: Text(text),
       ),
     );
   }
