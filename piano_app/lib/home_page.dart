@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:piano_app/components/piano_black_button.dart';
-import 'package:piano_app/components/piano_white_button.dart';
 import 'package:piano_app/piano_key_board.dart';
 
 class HomePage extends StatefulWidget {
