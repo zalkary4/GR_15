@@ -52,47 +52,47 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           ),
-          Stack(
-            children: [
-              SizedBox(
-                height: 260,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    // PianoBlackButton(),
-                    PianoWhiteButton(text: 'f1'),
-                    PianoWhiteButton(text: 'f2'),
-                    PianoWhiteButton(text: 'f3'),
-                    PianoWhiteButton(text: 'f4'),
-                    PianoWhiteButton(text: 'f5'),
-                    PianoWhiteButton(text: 'f6'),
-                    PianoWhiteButton(text: 'f7'),
-                    PianoWhiteButton(text: 'f1'),
-                    PianoWhiteButton(text: 'f2'),
-                    PianoWhiteButton(text: 'f3'),
-                    PianoWhiteButton(text: 'f4'),
-                    PianoWhiteButton(text: 'f5'),
-                    PianoWhiteButton(text: 'f6'),
-                    PianoWhiteButton(text: 'f7'),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 160,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    SizedBox(width: 55),
-                    PianoBlackButton(),
-                    PianoBlackButton(),
-                    PianoBlackButton(),
-                    PianoBlackButton(),
-                    PianoBlackButton(),
-                  ],
-                ),
-              ),
-            ],
-          ),
+          // Stack(
+          //   children: [
+          //     SizedBox(
+          //       height: 260,
+          //       child: ListView(
+          //         scrollDirection: Axis.horizontal,
+          //         children: const [
+          //           // PianoBlackButton(),
+          //           PianoWhiteButton(text: 'f1'),
+          //           PianoWhiteButton(text: 'f2'),
+          //           PianoWhiteButton(text: 'f3'),
+          //           PianoWhiteButton(text: 'f4'),
+          //           PianoWhiteButton(text: 'f5'),
+          //           PianoWhiteButton(text: 'f6'),
+          //           PianoWhiteButton(text: 'f7'),
+          //           PianoWhiteButton(text: 'f1'),
+          //           PianoWhiteButton(text: 'f2'),
+          //           PianoWhiteButton(text: 'f3'),
+          //           PianoWhiteButton(text: 'f4'),
+          //           PianoWhiteButton(text: 'f5'),
+          //           PianoWhiteButton(text: 'f6'),
+          //           PianoWhiteButton(text: 'f7'),
+          //         ],
+          //       ),
+          //     ),
+          //     SizedBox(
+          //       height: 160,
+          //       child: ListView(
+          //         scrollDirection: Axis.horizontal,
+          //         children: const [
+          //           SizedBox(width: 55),
+          //           PianoBlackButton(),
+          //           PianoBlackButton(),
+          //           PianoBlackButton(),
+          //           PianoBlackButton(),
+          //           PianoBlackButton(),
+          //         ],
+          //       ),
+          //     ),
+          //   ],
+          // ),
           const SizedBox(height: 8)
         ],
       ),
