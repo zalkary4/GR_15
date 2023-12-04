@@ -1,13 +1,16 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class PianoBlackButton extends StatelessWidget {
   const PianoBlackButton({
     super.key,
     required this.text,
+    required this.nota,
     this.visible = true,
     this.leftMargin = 0,
   });
   final String text;
+  final String nota;
   final bool visible;
   final double leftMargin;
 
@@ -33,7 +36,10 @@ class PianoBlackButton extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(bottom: Radius.circular(4)),
               ),
             ),
-            onPressed: () {},
+            onPressed: () async {
+              final player = AudioPlayer();
+              player.play(AssetSource('audios/$nota'));
+            },
             child: Text(
               text,
             ),

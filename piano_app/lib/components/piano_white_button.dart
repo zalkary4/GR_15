@@ -27,7 +27,7 @@ class PianoWhiteButton extends StatelessWidget {
         ),
         onPressed: () async {
           final player = AudioPlayer();
-          player.play(AssetSource(nota));
+          player.play(AssetSource('audios/$nota'));
         },
         child: Text(text),
       ),
