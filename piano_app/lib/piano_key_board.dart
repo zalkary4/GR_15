@@ -18,23 +18,20 @@ class PianoKeyBoard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  PianoWhiteButton(
-                    text: 'f1',
-                    nota: 'do.wav',
-                  ),
+                  PianoWhiteButton(text: 'f1', nota: 'do.wav'),
                   PianoWhiteButton(text: 'f2', nota: 're.wav'),
                   PianoWhiteButton(text: 'f3', nota: 'mi.wav'),
                   PianoWhiteButton(text: 'f4', nota: 'fa.wav'),
                   PianoWhiteButton(text: 'f5', nota: 'sol.wav'),
-                  PianoWhiteButton(text: 'f6'),
-                  PianoWhiteButton(text: 'f7'),
-                  PianoWhiteButton(text: 'f1'),
-                  PianoWhiteButton(text: 'f2'),
-                  PianoWhiteButton(text: 'f3'),
-                  PianoWhiteButton(text: 'f4'),
-                  PianoWhiteButton(text: 'f5'),
-                  PianoWhiteButton(text: 'f6'),
-                  PianoWhiteButton(text: 'f7'),
+                  PianoWhiteButton(text: 'f6', nota: 'lya.wav'),
+                  PianoWhiteButton(text: 'f7', nota: 'si.wav'),
+                  PianoWhiteButton(text: 'f1', nota: 'do.wav'),
+                  PianoWhiteButton(text: 'f2', nota: 're.wav'),
+                  PianoWhiteButton(text: 'f3', nota: 'mi.wav'),
+                  PianoWhiteButton(text: 'f4', nota: 'fa.wav'),
+                  PianoWhiteButton(text: 'f5', nota: 'sol.wav'),
+                  PianoWhiteButton(text: 'f6', nota: 'lya.wav'),
+                  PianoWhiteButton(text: 'f7', nota: 'si.wav'),
                 ],
               ),
               Row(
