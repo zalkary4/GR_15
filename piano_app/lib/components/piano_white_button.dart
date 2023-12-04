@@ -1,4 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+
+final player = AudioPlayer();
 
 class PianoWhiteButton extends StatelessWidget {
   const PianoWhiteButton({
@@ -22,7 +25,9 @@ class PianoWhiteButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          player.play(AssetSource('audios/do.wav'));
+        },
         child: Text(text),
       ),
     );
