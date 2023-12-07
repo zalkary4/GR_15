@@ -1,12 +1,29 @@
 void main(List<String> args) {
-  Student aktan = Student();
+  Student aktan = Student(
+    '01',
+    'Aktan',
+    19,
+    'IT',
+    1,
+    'BGU',
+    4.5,
+  );
 }
 
 class Student {
-  String? name;
+  Student(
+    this.id,
+    this.name,
+    this.age,
+    this.special,
+    this.kurs,
+    this.university,
+    this.avaregeScore,
+  );
   String? id;
-  String? special;
+  String? name;
   int? age;
+  String? special;
   int? kurs;
   String? university;
   double? avaregeScore;
