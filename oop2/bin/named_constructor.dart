@@ -1,36 +1,14 @@
+import 'stud_aktan.dart';
+
 void main(List<String> args) {
-  Student aktan = Student(
-    '01',
-    'Aktan',
-    19,
-    'IT',
-    1,
-    'BGU',
-    4.5,
+  // Student aktan = Student('rrr', 'Aktan', 19, 'IT', 1, 'BGU', 4.5);
+  StudentNamed anara = StudentNamed(
+    id: '01',
+    name: 'Aktan',
+    age: 18,
+    special: 'IT',
+    kurs: 1,
+    university: 'BGU',
+    avaregeScore: 4.2,
   );
-}
-
-class Student {
-  Student(
-    this.id,
-    this.name,
-    this.age,
-    this.special,
-    this.kurs,
-    this.university,
-    this.avaregeScore,
-  );
-  String? id;
-  String? name;
-  int? age;
-  String? special;
-  int? kurs;
-  String? university;
-  double? avaregeScore;
-
-  void taanysh() {
-    print(
-      'My name is $name, Jashym $age, $university $kurs okuim, kesibim $special, ortocho baam $avaregeScore',
-    );
-  }
 }
