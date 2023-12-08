@@ -26,18 +26,54 @@ class HomePage extends StatelessWidget {
                   fontSize: 32,
                   fontWeight: FontWeight.w500),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: const Color(0xff4cb050)),
-              onPressed: () {},
-              child: const Text(
-                'Туура',
-              ),
+            CustomButton(
+              bgColor: Color(0xff4cb050),
+              text: 'Туура',
+              baskanda: () {
+                print('tuura');
+              },
+            ),
+            CustomButton(
+              bgColor: Color(0xffef443a),
+              text: 'Туура эмес',
+              baskanda: () {
+                print('tuura emes');
+              },
             ),
           ],
         ),
       ),
     );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({
+    super.key,
+    required this.bgColor,
+    required this.text,
+    required this.baskanda,
+  });
+
+  final void Function()? baskanda;
+  final Color bgColor;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            textStyle: const TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.w500,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
+            ),
+            foregroundColor: Colors.white,
+            backgroundColor: bgColor,
+            fixedSize: const Size(335, 70.0)),
+        onPressed: () {},
+        child: Text(text));
   }
 }
