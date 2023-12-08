@@ -6,8 +6,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff343434),
       appBar: AppBar(
-        backgroundColor: Color(0xff343434),
         title: const Text(
           'Task 7',
           style: TextStyle(fontWeight: FontWeight.w700),
@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Spacer(),
             const Text(
               'Кыргызстанда 7 область барбы?',
               textAlign: TextAlign.center,
@@ -26,20 +27,23 @@ class HomePage extends StatelessWidget {
                   fontSize: 32,
                   fontWeight: FontWeight.w500),
             ),
+            const Spacer(),
             CustomButton(
-              bgColor: Color(0xff4cb050),
+              bgColor: const Color(0xff4cb050),
               text: 'Туура',
               baskanda: () {
                 print('tuura');
               },
             ),
+            const SizedBox(height: 20),
             CustomButton(
-              bgColor: Color(0xffef443a),
+              bgColor: const Color(0xffef443a),
               text: 'Туура эмес',
               baskanda: () {
                 print('tuura emes');
               },
             ),
+            const Spacer(flex: 2),
           ],
         ),
       ),
