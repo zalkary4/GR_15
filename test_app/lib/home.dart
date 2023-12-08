@@ -13,16 +13,30 @@ class HomePage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.w700),
         ),
       ),
-      body: const Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Кыргызстанда канча область бар?',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.white, fontSize: 32, fontWeight: FontWeight.w500),
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Кыргызстанда 7 область барбы?',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w500),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: const Color(0xff4cb050)),
+              onPressed: () {},
+              child: const Text(
+                'Туура',
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
