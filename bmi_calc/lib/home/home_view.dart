@@ -43,17 +43,33 @@ class HomeView extends StatelessWidget {
               color: const Color(0xff0b0120),
               child: Column(
                 children: [
-                  const Text('Height'),
+                  const Text(
+                    'Height',
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffceccd2),
+                    ),
+                  ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('180'),
+                      Text(
+                        '180',
+                      ),
                       Text('cm'),
                     ],
                   ),
-                  CupertinoSlider(
-                    value: 180,
-                    onChanged: (v) {},
+                  SizedBox(
+                    width: double.infinity,
+                    child: CupertinoSlider(
+                      value: 180,
+                      min: 30,
+                      max: 230,
+                      activeColor: const Color(0xffff1065),
+                      thumbColor: Colors.white,
+                      onChanged: (v) {},
+                    ),
                   ),
                 ],
               ),
