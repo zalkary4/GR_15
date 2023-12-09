@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bmi_calc/widgets/gender_card.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -9,21 +10,21 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff211834),
+      backgroundColor: const Color(0xff211834),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0xff211834),
+        backgroundColor: const Color(0xff211834),
         title: const Text('BMI Calc'),
         titleTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 22,
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.fromLTRB(20, 20, 20, 40),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: Column(
           children: [
-            Row(
+            const Row(
               children: [
                 Expanded(
                     child: GenderCard(
@@ -39,17 +40,21 @@ class HomeView extends StatelessWidget {
               ],
             ),
             Card(
-              color: Color(0xff0b0120),
+              color: const Color(0xff0b0120),
               child: Column(
                 children: [
-                  Text('Height'),
-                  Row(
+                  const Text('Height'),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('180'),
                       Text('cm'),
                     ],
-                  )
+                  ),
+                  CupertinoSlider(
+                    value: 180,
+                    onChanged: (v) {},
+                  ),
                 ],
               ),
             ),
