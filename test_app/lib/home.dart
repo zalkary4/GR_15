@@ -14,9 +14,11 @@ class HomePage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.w700),
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: HomeBody(),
+      body: const Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          child: HomeBody(),
+        ),
       ),
     );
   }
