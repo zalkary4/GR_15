@@ -53,11 +53,25 @@ class HomeView extends StatelessWidget {
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         '180',
+                        style: TextStyle(
+                          fontSize: 60,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                      Text('cm'),
+                      Text(
+                        'cm',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xffceccd2),
+                          height: 2.7,
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
