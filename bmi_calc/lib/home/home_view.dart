@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:bmi_calc/widgets/gender_card.dart';
 import 'package:bmi_calc/widgets/height_card.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -45,6 +42,23 @@ class HomeView extends StatelessWidget {
               value: 180,
               onChanged: (v) {},
             ),
+            Card(
+              child: Column(
+                children: [
+                  const Text('Weight'),
+                  const Text('Age'),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(shape: CircleBorder()),
+                        child: const Icon(Icons.add),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
