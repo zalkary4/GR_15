@@ -68,6 +68,18 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xffff1065),
+            foregroundColor: Colors.white,
+            textStyle: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+            fixedSize: const Size(double.infinity, 73)),
+        onPressed: () {},
+        child: const Text('Calculate'),
+      ),
     );
   }
 }
