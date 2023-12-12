@@ -25,7 +25,7 @@ class GenderCard extends StatelessWidget {
             const SizedBox(height: 20),
             Icon(
               icon,
-              size: 135,
+              size: 120,
             ),
             Text(
               text,

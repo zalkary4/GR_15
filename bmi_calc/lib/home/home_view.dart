@@ -1,5 +1,6 @@
 import 'package:bmi_calc/widgets/gender_card.dart';
 import 'package:bmi_calc/widgets/height_card.dart';
+import 'package:bmi_calc/widgets/remove_add_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -42,26 +43,28 @@ class HomeView extends StatelessWidget {
               value: 180,
               onChanged: (v) {},
             ),
-            Card(
-              child: Column(
-                children: [
-                  const Text('Weight'),
-                  const Text('Age'),
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff5c5b5b),
-                            foregroundColor: Colors.white,
-                            shape: const CircleBorder()),
-                        child: const Icon(Icons.add),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            )
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                Expanded(
+                  child: RemoveAddCard(
+                    text: 'Weight',
+                    value: 60,
+                    onPressedRemove: () {},
+                    onPressedAdd: () {},
+                  ),
+                ),
+                const SizedBox(width: 30),
+                Expanded(
+                  child: RemoveAddCard(
+                    text: 'AGE',
+                    value: 28,
+                    onPressedRemove: () {},
+                    onPressedAdd: () {},
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
