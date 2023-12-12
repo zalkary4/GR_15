@@ -15,6 +15,7 @@ class _HomeViewState extends State<HomeView> {
   bool isMale = false;
   double height = 180;
   double weight = 60;
+  int age = 30;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
