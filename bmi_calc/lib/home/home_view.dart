@@ -51,7 +51,10 @@ class HomeView extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {},
-                        style: ElevatedButton.styleFrom(shape: CircleBorder()),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff5c5b5b),
+                            foregroundColor: Colors.white,
+                            shape: const CircleBorder()),
                         child: const Icon(Icons.add),
                       ),
                     ],
