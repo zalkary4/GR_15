@@ -40,7 +40,10 @@ class HomeView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 15),
-            HeightCard(),
+            HeightCard(
+              value: 180,
+              onChanged: (v) {},
+            ),
           ],
         ),
       ),
@@ -51,8 +54,11 @@ class HomeView extends StatelessWidget {
 class HeightCard extends StatelessWidget {
   const HeightCard({
     super.key,
+    required this.value,
+    required this.onChanged,
   });
-  // final double value;
+  final double value;
+  final void Function(double)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -69,19 +75,19 @@ class HeightCard extends StatelessWidget {
                 color: Color(0xffceccd2),
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  '180',
-                  style: TextStyle(
+                  '${value.toInt()}',
+                  style: const TextStyle(
                     fontSize: 60,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                Text(
+                const Text(
                   'cm',
                   style: TextStyle(
                     fontSize: 22,
@@ -100,7 +106,7 @@ class HeightCard extends StatelessWidget {
                 max: 230,
                 activeColor: const Color(0xffff1065),
                 thumbColor: Colors.white,
-                onChanged: (v) {},
+                onChanged: onChanged,
               ),
             ),
           ],
