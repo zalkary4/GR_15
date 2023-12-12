@@ -4,9 +4,17 @@ import 'package:bmi_calc/widgets/remove_add_card.dart';
 import 'package:bmi_calc/widgets/bottom_nav_button.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  bool isMale = false;
+  double height = 180;
+  double weight = 60;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
