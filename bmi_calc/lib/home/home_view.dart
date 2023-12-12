@@ -1,6 +1,7 @@
 import 'package:bmi_calc/widgets/gender_card.dart';
 import 'package:bmi_calc/widgets/height_card.dart';
 import 'package:bmi_calc/widgets/remove_add_card.dart';
+import 'package:bmi_calc/widgets/bottom_nav_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -68,17 +69,9 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xffff1065),
-            foregroundColor: Colors.white,
-            textStyle: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-            fixedSize: const Size(double.infinity, 73)),
+      bottomNavigationBar: BottNavigationBar(
+        text: 'Calculate',
         onPressed: () {},
-        child: const Text('Calculate'),
       ),
     );
   }
