@@ -59,7 +59,7 @@ class _HomeViewState extends State<HomeView> {
                 Expanded(
                   child: RemoveAddCard(
                     text: 'Weight',
-                    value: 60,
+                    value: weight,
                     onPressedRemove: () {},
                     onPressedAdd: () {},
                   ),
@@ -68,7 +68,7 @@ class _HomeViewState extends State<HomeView> {
                 Expanded(
                   child: RemoveAddCard(
                     text: 'AGE',
-                    value: 28,
+                    value: age.toDouble(),
                     onPressedRemove: () {},
                     onPressedAdd: () {},
                   ),
