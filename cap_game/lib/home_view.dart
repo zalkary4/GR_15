@@ -12,13 +12,13 @@ class HomeView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert,
-            ),
+            icon: SvgPicture.asset('assets/icons/settings.svg'),
           ),
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/settings.svg'),
+            icon: const Icon(
+              Icons.more_vert,
+            ),
           ),
         ],
       ),
