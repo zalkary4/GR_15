@@ -12,7 +12,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final bool isMale = false;
+  bool isMale = false;
   final double height = 180;
   final double weight = 60;
   final int age = 30;
@@ -33,18 +33,28 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: Column(
           children: [
-            const Row(
+            Row(
               children: [
                 Expanded(
                     child: GenderCard(
                   icon: Icons.male,
                   text: 'Male',
+                  isActive: isMale,
+                  onTap: () {
+                    isMale = true;
+                    setState(() {});
+                  },
                 )),
-                SizedBox(width: 30),
+                const SizedBox(width: 30),
                 Expanded(
                     child: GenderCard(
                   icon: Icons.female,
                   text: 'Female',
+                  isActive: !isMale,
+                  onTap: () {
+                    isMale = false;
+                    setState(() {});
+                  },
                 )),
               ],
             ),
