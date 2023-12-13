@@ -106,8 +106,70 @@ class _HomeViewState extends State<HomeView> {
       ),
       bottomNavigationBar: BottNavigationBar(
         text: 'Calculate',
-        onPressed: () {},
+        onPressed: () {
+          final bmi = calculate();
+          showDialog(
+            context: context,
+            builder: (ctrx) {
+              return const AlertDialog(
+                backgroundColor: Color(0xff0b0120),
+                title: Center(
+                  child: Text(
+                    'Normal',
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+                content: Center(
+                  child: Text(
+                    '24.4',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+                actions: [
+                  Text(
+                    'Aryk',
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              );
+            },
+          );
+        },
       ),
     );
+  }
+
+  (String, double, String, Color)? calculate() {
+    final result = weight / (height * height);
+    if (result < 18.5) {
+      return (
+        'Normal',
+        result,
+        'Aryk',
+        Colors.red,
+      );
+    } else if (result >= 18.5 && result < 25) {
+      return (
+        'Normalduusuz',
+        result,
+        'Good',
+        Colors.green,
+      );
+    } else {
+      (
+        'Toluksuz',
+        result,
+        'Toluktuu',
+        Colors.yellow,
+      );
+    }
   }
 }
