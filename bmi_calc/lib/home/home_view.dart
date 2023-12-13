@@ -12,10 +12,10 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  bool isMale = false;
-  double height = 180;
-  double weight = 60;
-  int age = 30;
+  final bool isMale = false;
+  final double height = 180;
+  final double weight = 60;
+  final int age = 30;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +50,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             const SizedBox(height: 15),
             HeightCard(
-              value: 180,
+              value: height,
               onChanged: (v) {},
             ),
             const SizedBox(height: 15),

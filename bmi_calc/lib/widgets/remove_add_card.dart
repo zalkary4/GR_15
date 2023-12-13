@@ -2,15 +2,16 @@ import 'package:bmi_calc/widgets/circul_button.dart';
 import 'package:flutter/material.dart';
 
 class RemoveAddCard extends StatelessWidget {
-  const RemoveAddCard(
-      {super.key,
-      required this.text,
-      required this.value,
-      required this.onPressedRemove,
-      required this.onPressedAdd});
+  const RemoveAddCard({
+    super.key,
+    required this.text,
+    required this.value,
+    required this.onPressedRemove,
+    required this.onPressedAdd,
+  });
 
   final String text;
-  final int value;
+  final double value;
   final void Function()? onPressedRemove;
   final void Function()? onPressedAdd;
 
