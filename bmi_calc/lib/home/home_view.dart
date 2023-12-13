@@ -13,7 +13,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   bool isMale = false;
-  final double height = 180;
+  double height = 180;
   final double weight = 60;
   final int age = 30;
   @override
@@ -61,7 +61,11 @@ class _HomeViewState extends State<HomeView> {
             const SizedBox(height: 15),
             HeightCard(
               value: height,
-              onChanged: (v) {},
+              onChanged: (v) {
+                height = v;
+                setState(() {});
+                // print(v);
+              },
             ),
             const SizedBox(height: 15),
             Row(

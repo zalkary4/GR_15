@@ -51,7 +51,7 @@ class HeightCard extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: CupertinoSlider(
-                value: 180,
+                value: value,
                 min: 30,
                 max: 230,
                 activeColor: const Color(0xffff1065),
