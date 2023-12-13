@@ -111,33 +111,33 @@ class _HomeViewState extends State<HomeView> {
           showDialog(
             context: context,
             builder: (ctrx) {
-              return const AlertDialog(
-                backgroundColor: Color(0xff0b0120),
+              return AlertDialog(
+                backgroundColor: const Color(0xff0b0120),
                 title: Center(
                   child: Text(
-                    'Normal',
+                    bmi.$1,
                     style: TextStyle(
-                      color: Colors.green,
+                      color: bmi.$4,
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
                     ),
                   ),
                 ),
-                content: Center(
-                  child: Text(
-                    '24.4',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
+                content: Text(
+                  '${bmi.$2}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 60,
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 actions: [
                   Text(
-                    'Aryk',
-                    style: TextStyle(color: Colors.white),
-                  )
+                    '${bmi.$3}',
+                    style: const TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               );
             },
@@ -147,14 +147,15 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
-  (String, double, String, Color)? calculate() {
-    final result = weight / (height * height);
+  (String, double, String, Color) calculate() {
+    final v = weight / ((height * height) / 10000);
+    final result = double.parse(v.toStringAsFixed(1));
     if (result < 18.5) {
       return (
         'Normal',
         result,
         'Aryk',
-        Colors.red,
+        Colors.blue,
       );
     } else if (result >= 18.5 && result < 25) {
       return (
@@ -164,11 +165,11 @@ class _HomeViewState extends State<HomeView> {
         Colors.green,
       );
     } else {
-      (
+      return (
         'Toluksuz',
         result,
         'Toluktuu',
-        Colors.yellow,
+        Colors.red,
       );
     }
   }
