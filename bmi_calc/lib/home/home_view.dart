@@ -14,8 +14,8 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   bool isMale = false;
   double height = 180;
-  final double weight = 60;
-  final int age = 30;
+  double weight = 60;
+  int age = 30;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,8 +74,14 @@ class _HomeViewState extends State<HomeView> {
                   child: RemoveAddCard(
                     text: 'Weight',
                     value: weight,
-                    onPressedRemove: () {},
-                    onPressedAdd: () {},
+                    onPressedRemove: () {
+                      weight--;
+                      setState(() {});
+                    },
+                    onPressedAdd: () {
+                      weight++;
+                      setState(() {});
+                    },
                   ),
                 ),
                 const SizedBox(width: 30),
@@ -83,8 +89,14 @@ class _HomeViewState extends State<HomeView> {
                   child: RemoveAddCard(
                     text: 'AGE',
                     value: age.toDouble(),
-                    onPressedRemove: () {},
-                    onPressedAdd: () {},
+                    onPressedRemove: () {
+                      age--;
+                      setState(() {});
+                    },
+                    onPressedAdd: () {
+                      age++;
+                      setState(() {});
+                    },
                   ),
                 ),
               ],
