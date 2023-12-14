@@ -17,13 +17,18 @@ class _HomeDetailViewState extends State<HomeDetailView> {
       ),
       body: Column(
         children: [
+          const SizedBox(height: 20),
           const Text(
             'Bishkek',
             style: TextStyle(fontSize: 38),
           ),
           Padding(
             padding: const EdgeInsets.all(20),
-            child: Image.network('src'),
+            child: Image.network(
+              'src',
+              height: MediaQuery.of(context).size.height * 0.3,
+              fit: BoxFit.fitHeight,
+            ),
           ),
           const SizedBox(height: 20),
           const Row(
@@ -38,16 +43,22 @@ class _HomeDetailViewState extends State<HomeDetailView> {
               OptionButton(),
             ],
           ),
+          const Spacer(),
           SizedBox(
-            height: 40,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (BuildContext context, int index) {
-                return const Icon(Icons.star);
-              },
+            height: 20,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: ListView.builder(
+                // padding: EdgeInsets.all(20),
+                scrollDirection: Axis.horizontal,
+                itemCount: 40,
+                itemBuilder: (BuildContext context, int index) {
+                  return const Icon(Icons.star);
+                },
+              ),
             ),
-          )
+          ),
+          const SizedBox(height: 50)
         ],
       ),
     );
@@ -66,9 +77,10 @@ class OptionButton extends StatelessWidget {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
               fixedSize: const Size(double.infinity, 70),
+              textStyle: const TextStyle(fontSize: 18),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20))),
-          child: const Text('KG'),
+          child: const Text('KG', textAlign: TextAlign.center),
         ),
       ),
     );
