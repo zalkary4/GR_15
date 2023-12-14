@@ -22,7 +22,11 @@ class _HomeDetailViewState extends State<HomeDetailView> {
             'Bishkek',
             style: TextStyle(fontSize: 38),
           ),
-          Image.network('src'),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Image.network('src'),
+          ),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
