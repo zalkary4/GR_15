@@ -20,3 +20,11 @@ class Variant {
   final String text;
   final bool isTrue;
 }
+
+final test1 = Test(
+  questionText: 'Bishkek',
+  variant1: const Variant(text: 'Kazahstan'),
+  variant2: const Variant(text: 'Kyrgyzstan', isTrue: true),
+  variant3: const Variant(text: 'Korea'),
+  variant4: const Variant(text: 'Turkey'),
+);
