@@ -13,12 +13,15 @@ class _HomeDetailViewState extends State<HomeDetailView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitle(title: 'Home Detail'),
+        title: const AppBarTitle(title: 'Asia'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('Bishkek'),
+          const Text(
+            'Bishkek',
+            style: TextStyle(fontSize: 38),
+          ),
           Image.network('src'),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
