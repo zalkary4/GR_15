@@ -1,7 +1,8 @@
 import 'package:cap_game/models/continent.dart';
+import 'package:cap_game/widgets/app_bar_title.dart';
+import 'package:cap_game/widgets/continent_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -10,15 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Capital',
-          style: GoogleFonts.besley(
-            textStyle: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
+        title: const AppBarTitle(title: 'Capital'),
         actions: [
           IconButton(
             onPressed: () {},
@@ -51,22 +44,7 @@ class HomeView extends StatelessWidget {
           crossAxisSpacing: 20,
         ),
         itemBuilder: (context, index) {
-          final continent = continents[index];
-          return Column(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: 22,
-                child: DecoratedBox(
-                    decoration: const BoxDecoration(color: Color(0xffeeeeee)),
-                    child: Text(continent.name)),
-              ),
-              Image.asset(
-                continent.imagePath,
-                fit: BoxFit.cover,
-              ),
-            ],
-          );
+          return ContinentCard(continent: continents[index]);
         },
       ),
     );
