@@ -16,12 +16,36 @@ class _HomeDetailViewState extends State<HomeDetailView> {
         title: const AppBarTitle(title: 'Home Detail'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text('Bishkek'),
           Image.network('src'),
           Row(
-            children: [ElevatedButton(onPressed: () {}, child: Text('KG'))],
-          )
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('KG'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('KZ'),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('UZ'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('TR'),
+              ),
+            ],
+          ),
         ],
       ),
     );
