@@ -25,7 +25,7 @@ class _HomeDetailViewState extends State<HomeDetailView> {
           Padding(
             padding: const EdgeInsets.all(20),
             child: Image.network(
-              'src',
+              'https://tripplanet.ru/wp-content/uploads/asia/kyrgyzstan/bishkek/dostoprimechatelnosti-bishkeka.jpg',
               height: MediaQuery.of(context).size.height * 0.3,
               fit: BoxFit.fitHeight,
             ),
