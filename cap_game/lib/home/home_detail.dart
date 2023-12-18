@@ -20,10 +20,12 @@ class _HomeDetailViewState extends State<HomeDetailView> {
   List<bool> answers = [];
 
   void checkAnswer(bool isTrue) {
-    if (index + 1 < widget.tests.length) {
+    if (answers.length < widget.tests.length) {
       answers.add(isTrue);
-      // Variant.isTrue == widget.tests[index];
-      index++;
+      if (index + 1 < widget.tests.length) {
+        index++;
+      }
+
       setState(() {});
     }
   }
