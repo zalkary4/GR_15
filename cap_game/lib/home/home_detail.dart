@@ -16,6 +16,18 @@ class HomeDetailView extends StatefulWidget {
 
 class _HomeDetailViewState extends State<HomeDetailView> {
   int index = 0;
+
+  List<bool> answers = [];
+
+  void checkAnswer(bool isTrue) {
+    if (index + 1 < widget.tests.length) {
+      answers.add(isTrue);
+      // Variant.isTrue == widget.tests[index];
+      index++;
+      setState(() {});
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,16 +53,12 @@ class _HomeDetailViewState extends State<HomeDetailView> {
           Row(
             children: [
               OptionButton(
-                text: widget.tests[index].variant1.text,
-                onPressed: () {
-                  print(index);
-                  print(widget.tests.length);
-                  if (index + 1 < widget.tests.length) {
-                    index++;
-                    setState(() {});
-                  }
-                },
-              ),
+                  text: widget.tests[index].variant1.text,
+                  onPressed: () {
+                    // print(index);
+                    // print(widget.tests.length);
+                    checkAnswer(widget.tests[index].variant1.isTrue);
+                  }),
               OptionButton(
                 text: widget.tests[index].variant2.text,
                 onPressed: () {},
@@ -77,9 +85,13 @@ class _HomeDetailViewState extends State<HomeDetailView> {
               child: ListView.builder(
                 // padding: EdgeInsets.all(20),
                 scrollDirection: Axis.horizontal,
-                itemCount: 40,
+                itemCount: answers.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return const Icon(Icons.star);
+                  final answer = answers[index];
+                  return Icon(
+                    Icons.star,
+                    color: answer ? Colors.yellow : Colors.black,
+                  );
                 },
               ),
             ),
