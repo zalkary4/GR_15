@@ -61,7 +61,9 @@ class _HomeDetailViewState extends State<HomeDetailView> {
                   }),
               OptionButton(
                 text: widget.tests[index].variant2.text,
-                onPressed: () {},
+                onPressed: () {
+                  checkAnswer(widget.tests[index].variant2.isTrue);
+                },
               ),
             ],
           ),
@@ -69,11 +71,15 @@ class _HomeDetailViewState extends State<HomeDetailView> {
             children: [
               OptionButton(
                 text: widget.tests[index].variant3.text,
-                onPressed: () {},
+                onPressed: () {
+                  checkAnswer(widget.tests[index].variant3.isTrue);
+                },
               ),
               OptionButton(
                 text: widget.tests[index].variant4.text,
-                onPressed: () {},
+                onPressed: () {
+                  checkAnswer(widget.tests[index].variant4.isTrue);
+                },
               ),
             ],
           ),
