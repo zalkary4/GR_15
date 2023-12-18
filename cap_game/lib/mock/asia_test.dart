@@ -1,4 +1,4 @@
-import 'package:capitals_game/models/question.dart';
+import 'package:cap_game/models/question.dart';
 
 const test1 = Test(
   questionText: 'Beijing',

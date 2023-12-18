@@ -1,8 +1,9 @@
-import 'package:capitals_game/models/question.dart';
+import 'package:cap_game/models/question.dart';
 
 const test1 = Test(
   questionText: 'What is the capital of France?',
-  imageUrl: 'https://www.vdio.com/wp-content/uploads/2017/04/capital-city-of-France-scaled.jpg',
+  imageUrl:
+      'https://www.vdio.com/wp-content/uploads/2017/04/capital-city-of-France-scaled.jpg',
   variant1: Variant(text: 'London'),
   variant2: Variant(text: 'Paris', isTrue: true),
   variant3: Variant(text: 'Berlin'),
@@ -20,7 +21,8 @@ const test2 = Test(
 
 const test3 = Test(
   questionText: 'What is the capital of Germany?',
-  imageUrl: 'https://www.berlin.de/binaries/asset/image_assets/8215661/ratio_4_3/1686824224/800x600/',
+  imageUrl:
+      'https://www.berlin.de/binaries/asset/image_assets/8215661/ratio_4_3/1686824224/800x600/',
   variant1: Variant(text: 'Berlin', isTrue: true),
   variant2: Variant(text: 'Moscow'),
   variant3: Variant(text: 'Paris'),
@@ -48,7 +50,8 @@ const test5 = Test(
 
 const test6 = Test(
   questionText: 'What is the capital of Greece?',
-  imageUrl: 'https://his-discover.com/blog/philippines/storage/posts/September2020/YXLWMvlSweilHkdTL2hy.jpg',
+  imageUrl:
+      'https://his-discover.com/blog/philippines/storage/posts/September2020/YXLWMvlSweilHkdTL2hy.jpg',
   variant1: Variant(text: 'Istanbul'),
   variant2: Variant(text: 'Rome'),
   variant3: Variant(text: 'Athens', isTrue: true),
@@ -57,7 +60,8 @@ const test6 = Test(
 
 const test7 = Test(
     questionText: 'What is the capital of Sweden?',
-    imageUrl: 'https://www.worldatlas.com/r/w960-q80/upload/a1/28/76/shutterstock-133005938.jpg',
+    imageUrl:
+        'https://www.worldatlas.com/r/w960-q80/upload/a1/28/76/shutterstock-133005938.jpg',
     variant1: Variant(text: 'Helsinki'),
     variant2: Variant(text: 'Stockholm', isTrue: true),
     variant3: Variant(text: 'Oslo'),
@@ -65,7 +69,8 @@ const test7 = Test(
 
 const test8 = Test(
   questionText: 'Which city is known for its canals and gondolas?',
-  imageUrl: 'https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20200917144111/iStock-576922338.jpg',
+  imageUrl:
+      'https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20200917144111/iStock-576922338.jpg',
   variant1: Variant(text: 'Venice', isTrue: true),
   variant2: Variant(text: 'Madrid'),
   variant3: Variant(text: 'Athens'),
@@ -83,7 +88,8 @@ const test9 = Test(
 );
 
 const test10 = Test(
-  questionText: 'Which city is known for its historic architecture and Acropolis?',
+  questionText:
+      'Which city is known for its historic architecture and Acropolis?',
   imageUrl:
       'https://cdn-imgix.headout.com/mircobrands-content/image/225ae5f5716f18fcd89d5aba0c8166d3-Parthenon%20Athens%20-Frieze.jpg?auto=format&w=713.0666666666667&h=458.4&q=90&fit=crop&ar=14%3A9',
   variant1: Variant(text: 'Athens', isTrue: true),
@@ -103,7 +109,8 @@ const test11 = Test(
 
 const test12 = Test(
   questionText: 'Which city is known for its historic Red Square?',
-  imageUrl: 'https://www.advantour.com/russia/images/moscow/moscow_red-square1.jpg',
+  imageUrl:
+      'https://www.advantour.com/russia/images/moscow/moscow_red-square1.jpg',
   variant1: Variant(text: 'Moscow', isTrue: true),
   variant2: Variant(text: 'Paris'),
   variant3: Variant(text: 'Vienna'),
@@ -162,7 +169,8 @@ const test17 = Test(
 
 const test18 = Test(
   questionText: 'Berne',
-  imageUrl: 'https://cdn.generationvoyage.fr/2018/11/berne-centre-ville-historique-suisse-e1541582712521.jpg',
+  imageUrl:
+      'https://cdn.generationvoyage.fr/2018/11/berne-centre-ville-historique-suisse-e1541582712521.jpg',
   variant1: Variant(text: 'Poland'),
   variant2: Variant(text: 'Latvia'),
   variant3: Variant(text: 'Switzerland', isTrue: true),
@@ -171,7 +179,8 @@ const test18 = Test(
 
 const test19 = Test(
   questionText: 'Prague',
-  imageUrl: 'https://freewalkingtour.com/wp-content/uploads/2021/10/prague-castle1.jpg',
+  imageUrl:
+      'https://freewalkingtour.com/wp-content/uploads/2021/10/prague-castle1.jpg',
   variant1: Variant(text: 'Italy'),
   variant2: Variant(text: 'Czech', isTrue: true),
   variant3: Variant(text: 'Poland'),

@@ -1,46 +1,70 @@
+import 'package:cap_game/models/question.dart';
 import 'package:cap_game/widgets/app_bar_title.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetailView extends StatefulWidget {
-  const HomeDetailView({super.key});
+  const HomeDetailView(
+    this.tests, {
+    super.key,
+  });
+
+  final List<Test> tests;
 
   @override
   State<HomeDetailView> createState() => _HomeDetailViewState();
 }
 
 class _HomeDetailViewState extends State<HomeDetailView> {
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitle(title: 'Asia'),
+        title: const AppBarTitle('Try test'),
       ),
       body: Column(
         children: [
           const SizedBox(height: 20),
-          const Text(
-            'Bishkek',
-            style: TextStyle(fontSize: 38),
+          Text(
+            widget.tests[index].questionText,
+            style: const TextStyle(fontSize: 38),
           ),
           Padding(
             padding: const EdgeInsets.all(20),
             child: Image.network(
-              'https://tripplanet.ru/wp-content/uploads/asia/kyrgyzstan/bishkek/dostoprimechatelnosti-bishkeka.jpg',
+              widget.tests[index].imageUrl,
               height: MediaQuery.of(context).size.height * 0.3,
               fit: BoxFit.fitHeight,
             ),
           ),
           const SizedBox(height: 20),
-          const Row(
+          Row(
             children: [
-              OptionButton(),
-              OptionButton(),
+              OptionButton(
+                text: widget.tests[index].variant1.text,
+                onPressed: () {
+                  if (index + 1 < widget.tests.length) {
+                    index++;
+                    setState(() {});
+                  }
+                },
+              ),
+              OptionButton(
+                text: widget.tests[index].variant2.text,
+                onPressed: () {},
+              ),
             ],
           ),
-          const Row(
+          Row(
             children: [
-              OptionButton(),
-              OptionButton(),
+              OptionButton(
+                text: widget.tests[index].variant3.text,
+                onPressed: () {},
+              ),
+              OptionButton(
+                text: widget.tests[index].variant4.text,
+                onPressed: () {},
+              ),
             ],
           ),
           const Spacer(),
@@ -66,21 +90,27 @@ class _HomeDetailViewState extends State<HomeDetailView> {
 }
 
 class OptionButton extends StatelessWidget {
-  const OptionButton({super.key});
+  const OptionButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
 
+  final String text;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               fixedSize: const Size(double.infinity, 70),
               textStyle: const TextStyle(fontSize: 18),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20))),
-          child: const Text('KG', textAlign: TextAlign.center),
+          child: Text(text, textAlign: TextAlign.center),
         ),
       ),
     );

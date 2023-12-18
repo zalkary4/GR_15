@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitle(title: 'Capital'),
+        title: const AppBarTitle('Capital'),
         actions: [
           IconButton(
             onPressed: () {},

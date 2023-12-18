@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContinentCard extends StatelessWidget {
-  const ContinentCard({
+  ContinentCard({
     super.key,
     required this.continent,
   });
@@ -18,7 +18,7 @@ class ContinentCard extends StatelessWidget {
         Navigator.push<void>(
           context,
           MaterialPageRoute(
-            builder: (BuildContext context) => const HomeDetailView(),
+            builder: (BuildContext context) => HomeDetailView(continent.tests),
           ),
         );
       },

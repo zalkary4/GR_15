@@ -1,4 +1,4 @@
-import 'package:capitals_game/models/question.dart';
+import 'package:cap_game/models/question.dart';
 
 const test1 = Test(
   questionText: 'Rio de Janeiro',
@@ -42,7 +42,8 @@ const test4 = Test(
 
 const test5 = Test(
   questionText: 'Santiago',
-  imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGexzNMqm1LqcH6ZG8rM36B9XR5WnCqJs41w&usqp=CAU',
+  imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGexzNMqm1LqcH6ZG8rM36B9XR5WnCqJs41w&usqp=CAU',
   variant1: Variant(text: 'Guyana'),
   variant2: Variant(text: 'Ecuador'),
   variant3: Variant(text: 'Chile', isTrue: true),
@@ -71,7 +72,8 @@ const test7 = Test(
 
 const test8 = Test(
   questionText: 'Asunción',
-  imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_U17PSfZ6YjRlmW-m-JGPFDNLXHHn0MEzA&usqp=CAU',
+  imageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_U17PSfZ6YjRlmW-m-JGPFDNLXHHn0MEzA&usqp=CAU',
   variant1: Variant(text: 'Brazil'),
   variant2: Variant(text: 'Argentina'),
   variant3: Variant(text: 'Paraguay', isTrue: true),
@@ -80,7 +82,8 @@ const test8 = Test(
 
 const test9 = Test(
   questionText: 'La Paz',
-  imageUrl: 'https://lp-cms-production.imgix.net/2020-11/c395ec1c1715560f5d4319d89534b894-la-paz-cemetery.jpg',
+  imageUrl:
+      'https://lp-cms-production.imgix.net/2020-11/c395ec1c1715560f5d4319d89534b894-la-paz-cemetery.jpg',
   variant1: Variant(text: 'Ecuador'),
   variant2: Variant(text: 'Peru'),
   variant3: Variant(text: 'Bolivia', isTrue: true),
@@ -89,7 +92,8 @@ const test9 = Test(
 
 const test10 = Test(
   questionText: 'Georgetown',
-  imageUrl: 'https://menlocoaching.com/app/uploads/2021/10/georgetown_mcdonough-1024x696.jpeg',
+  imageUrl:
+      'https://menlocoaching.com/app/uploads/2021/10/georgetown_mcdonough-1024x696.jpeg',
   variant1: Variant(text: 'Brazil'),
   variant2: Variant(text: 'Guyana', isTrue: true),
   variant3: Variant(text: 'Colombia'),

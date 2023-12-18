@@ -1,4 +1,4 @@
-import 'package:capitals_game/models/question.dart';
+import 'package:cap_game/models/question.dart';
 
 const test1 = Test(
   questionText: 'Canberra',
@@ -41,7 +41,8 @@ const test4 = Test(
 
 const test5 = Test(
   questionText: 'Adelaide',
-  imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Adelaide_skyline%2C_December_2022.jpg',
+  imageUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/8/8e/Adelaide_skyline%2C_December_2022.jpg',
   variant1: Variant(text: 'Perth'),
   variant2: Variant(text: 'Brisbane'),
   variant3: Variant(text: 'Adelaide', isTrue: true),
