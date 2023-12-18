@@ -43,6 +43,8 @@ class _HomeDetailViewState extends State<HomeDetailView> {
               OptionButton(
                 text: widget.tests[index].variant1.text,
                 onPressed: () {
+                  print(index);
+                  print(widget.tests.length);
                   if (index + 1 < widget.tests.length) {
                     index++;
                     setState(() {});
