@@ -3,7 +3,10 @@ import 'package:cap_game/widgets/app_bar_title.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetailView extends StatefulWidget {
-  const HomeDetailView(this.tests, {super.key});
+  const HomeDetailView(
+    this.tests, {
+    super.key,
+  });
 
   final List<Test> tests;
 
@@ -22,6 +25,7 @@ class _HomeDetailViewState extends State<HomeDetailView> {
       if (index + 1 < widget.tests.length) {
         index++;
       }
+
       setState(() {});
     }
   }
@@ -30,7 +34,7 @@ class _HomeDetailViewState extends State<HomeDetailView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitile('Try Test'),
+        title: const AppBarTitle('Try test'),
       ),
       body: Column(
         children: [
@@ -48,14 +52,16 @@ class _HomeDetailViewState extends State<HomeDetailView> {
               fit: BoxFit.fitHeight,
             ),
           ),
+          const SizedBox(height: 20),
           Row(
             children: [
               OptionButton(
-                text: widget.tests[index].variant1.text,
-                onPressed: () {
-                  checkAnswer(widget.tests[index].variant1.isTrue);
-                },
-              ),
+                  text: widget.tests[index].variant1.text,
+                  onPressed: () {
+                    // print(index);
+                    // print(widget.tests.length);
+                    checkAnswer(widget.tests[index].variant1.isTrue);
+                  }),
               OptionButton(
                 text: widget.tests[index].variant2.text,
                 onPressed: () {
@@ -86,13 +92,14 @@ class _HomeDetailViewState extends State<HomeDetailView> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ListView.builder(
+                // padding: EdgeInsets.all(20),
                 scrollDirection: Axis.horizontal,
                 itemCount: answers.length,
                 itemBuilder: (BuildContext context, int index) {
                   final answer = answers[index];
                   return Icon(
                     Icons.star,
-                    color: answer ? Colors.yellow : Colors.red,
+                    color: answer ? Colors.yellow : Colors.black,
                   );
                 },
               ),
@@ -114,21 +121,18 @@ class OptionButton extends StatelessWidget {
 
   final String text;
   final void Function()? onPressed;
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20.0),
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            fixedSize: const Size(double.infinity, 70),
-            textStyle: const TextStyle(fontSize: 18),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ),
+              fixedSize: const Size(double.infinity, 70),
+              textStyle: const TextStyle(fontSize: 18),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20))),
           child: Text(text, textAlign: TextAlign.center),
         ),
       ),

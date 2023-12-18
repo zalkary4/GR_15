@@ -1,17 +1,17 @@
-import 'package:cap_game/models/contident.dart';
+import 'package:cap_game/models/continent.dart';
 import 'package:cap_game/widgets/app_bar_title.dart';
 import 'package:cap_game/widgets/continent_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitile('Capital is of the World'),
+        title: const AppBarTitle('Capital'),
         actions: [
           IconButton(
             onPressed: () {},
@@ -19,7 +19,9 @@ class HomeView extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.more_vert),
+            icon: const Icon(
+              Icons.more_vert,
+            ),
           ),
         ],
         bottom: const PreferredSize(
@@ -29,7 +31,6 @@ class HomeView extends StatelessWidget {
             indent: 15,
             endIndent: 15,
             thickness: 2,
-            height: 0,
           ),
         ),
       ),
@@ -38,8 +39,8 @@ class HomeView extends StatelessWidget {
         itemCount: continents.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 3 / 4,
           mainAxisSpacing: 20,
+          childAspectRatio: 3 / 4,
           crossAxisSpacing: 20,
         ),
         itemBuilder: (context, index) {

@@ -1,10 +1,13 @@
 import 'package:cap_game/home/home_detail.dart';
-import 'package:cap_game/models/contident.dart';
+import 'package:cap_game/models/continent.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContinentCard extends StatelessWidget {
-  const ContinentCard({super.key, required this.continent});
+  ContinentCard({
+    super.key,
+    required this.continent,
+  });
 
   final Continent continent;
 
@@ -14,7 +17,7 @@ class ContinentCard extends StatelessWidget {
       onTap: () {
         Navigator.push<void>(
           context,
-          MaterialPageRoute<void>(
+          MaterialPageRoute(
             builder: (BuildContext context) => HomeDetailView(continent.tests),
           ),
         );
@@ -25,7 +28,7 @@ class ContinentCard extends StatelessWidget {
             width: double.infinity,
             height: 22,
             child: DecoratedBox(
-              decoration: const BoxDecoration(color: Color(0xffEEEEEE)),
+              decoration: const BoxDecoration(color: Color(0xffeeeeee)),
               child: Center(
                 child: Text(
                   continent.name,

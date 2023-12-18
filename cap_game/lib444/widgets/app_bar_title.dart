@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AppBarTitile extends StatelessWidget {
-  const AppBarTitile(this.title, {super.key});
+class AppBarTitle extends StatelessWidget {
+  const AppBarTitle(
+    this.title, {
+    super.key,
+  });
 
   final String title;
 
