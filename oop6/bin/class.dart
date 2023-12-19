@@ -18,6 +18,15 @@ class Cat extends Animal {
   }
 }
 
+class Jolbors extends Cat {
+  Jolbors(super.name);
+  @override
+  void golos() {
+    // TODO: implement golos
+    super.golos();
+  }
+}
+
 void main(List<String> args) {
   final cat1 = Cat('Tom');
   print(cat1.name);
