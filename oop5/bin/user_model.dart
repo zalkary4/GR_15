@@ -2,12 +2,12 @@ class User {
   User({
     required this.id,
     required String nameValue,
-    // required this.name,
-    required this.lastName,
-  }) : _name = nameValue;
+    required String lastNameValue,
+  })  : _name = nameValue,
+        _lastName = lastNameValue;
   final int id;
   final String _name;
-  final String lastName;
+  final String _lastName;
   void sentTx() {
     print('senTx ishtedi');
   }

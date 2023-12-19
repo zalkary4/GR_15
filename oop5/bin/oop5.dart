@@ -6,6 +6,6 @@ void main(List<String> arguments) {
   final user1 = User(
     id: 1,
     nameValue: 'Ivan',
-    lastName: 'Ivanov',
+    lastNameValue: 'Ivanov',
   );
 }
