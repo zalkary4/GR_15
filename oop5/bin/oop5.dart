@@ -8,4 +8,10 @@ void main(List<String> arguments) {
     nameValue: 'Ivan',
     lastNameValue: 'Ivanov',
   );
+
+  final client1 = Client();
+  client1.name = 'Ivan';
+  client1.setName('Ivan');
+  client1.age;
+  client1.getAge;
 }
