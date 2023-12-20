@@ -43,7 +43,10 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: const Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.symmetric(
+            horizontal: 30,
+            vertical: 15,
+          ),
           child: HomeBody(),
         ),
       ),

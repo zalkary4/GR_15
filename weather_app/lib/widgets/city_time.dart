@@ -18,7 +18,7 @@ class CityTimeWidget extends StatelessWidget {
         Text(
           city,
           style: const TextStyle(
-            fontSize: 22,
+            fontSize: 36,
             fontWeight: FontWeight.w500,
             color: AppColors.titleTextColor,
           ),
@@ -27,7 +27,7 @@ class CityTimeWidget extends StatelessWidget {
         Text(
           time,
           style: const TextStyle(
-            fontSize: 10,
+            fontSize: 20,
             fontWeight: FontWeight.w400,
             color: AppColors.timeTextColor,
           ),
