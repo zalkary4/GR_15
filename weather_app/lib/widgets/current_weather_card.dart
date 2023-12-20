@@ -18,7 +18,7 @@ class CurrentWeatherCard extends StatelessWidget {
             Stack(
               children: [
                 const Text(
-                  '19',
+                  '19 ',
                   style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
@@ -26,9 +26,7 @@ class CurrentWeatherCard extends StatelessWidget {
                 ),
                 Positioned(
                   right: 0,
-                  top: 10,
-
-                  // alignment: Alignment.topRight,
+                  top: 12,
                   child: SvgPicture.asset(
                     AssetsConst.degreeSign,
                   ),
