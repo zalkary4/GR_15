@@ -4,15 +4,23 @@ import 'package:wheater_app/constatnts/assets_constants.dart';
 import 'package:wheater_app/constatnts/colors_const.dart';
 
 class CurrentWeatherCard extends StatelessWidget {
-  const CurrentWeatherCard({super.key});
+  const CurrentWeatherCard({
+    super.key,
+    required this.degree,
+    required this.weatherState,
+    required this.icon,
+  });
 
+  final String degree;
+  final String weatherState;
+  final String icon;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SvgPicture.asset(
-          AssetsConst.weather05,
+          icon,
           height: 100,
         ),
         Column(
@@ -20,9 +28,9 @@ class CurrentWeatherCard extends StatelessWidget {
           children: [
             Stack(
               children: [
-                const Text(
-                  '19 ',
-                  style: TextStyle(
+                Text(
+                  '$degree ',
+                  style: const TextStyle(
                     fontSize: 90,
                     fontWeight: FontWeight.bold,
                     color: AppColors.degreeTextColor,
@@ -39,9 +47,9 @@ class CurrentWeatherCard extends StatelessWidget {
                 ),
               ],
             ),
-            const Text(
-              '   Rainy',
-              style: TextStyle(
+            Text(
+              '   $weatherState',
+              style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
                 color: AppColors.degreeTextColor,
