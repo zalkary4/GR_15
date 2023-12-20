@@ -13,7 +13,30 @@ class CurrentWeatherCard extends StatelessWidget {
           AssetsConst.weather05,
           height: 100,
         ),
-        Column(),
+        Column(
+          children: [
+            Stack(
+              children: [
+                const Text(
+                  '19',
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Positioned(
+                  right: 0,
+                  top: 10,
+
+                  // alignment: Alignment.topRight,
+                  child: SvgPicture.asset(
+                    AssetsConst.degreeSign,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ],
     );
   }
