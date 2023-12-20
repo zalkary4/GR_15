@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wheater_app/constatnts/colors_const.dart';
+import 'package:wheater_app/widgets/city_time.dart';
+import 'package:wheater_app/widgets/current_weather_card.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -9,24 +11,12 @@ class HomeBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Bishkek \nBishkek',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.w500,
-            color: AppColors.titleTextColor,
-          ),
-        ),
-        const SizedBox(height: 7),
-        const Text(
-          'Tue, Jun 30',
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w400,
-            color: AppColors.timeTextColor,
-          ),
+        const CityTimeWidget(
+          city: 'Bishkek',
+          time: 'Tue, Jun 30',
         ),
         Container(),
+        CurrentWeatherCard(),
       ],
     );
   }
