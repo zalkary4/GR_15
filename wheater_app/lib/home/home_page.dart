@@ -12,9 +12,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Task 9'),
+        title: const Text('Wheather 9'),
       ),
-      body: Container(),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/wet.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
     );
   }
 }
