@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wheater_app/constatnts/colors_const.dart';
+import 'package:wheater_app/constants/colors_cons.dart';
 
 class CityTimeWidget extends StatelessWidget {
   const CityTimeWidget({

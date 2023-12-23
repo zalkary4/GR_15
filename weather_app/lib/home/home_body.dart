@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wheater_app/constatnts/assets_constants.dart';
-import 'package:wheater_app/constatnts/colors_const.dart';
+import 'package:wheater_app/constants/assets_const.dart';
 import 'package:wheater_app/widgets/city_time.dart';
 import 'package:wheater_app/widgets/current_weather_card.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wheater_app/constatnts/assets_constants.dart';
-import 'package:wheater_app/constatnts/colors_const.dart';
+import 'package:wheater_app/constants/assets_const.dart';
+import 'package:wheater_app/constants/colors_cons.dart';
 
 class CurrentWeatherCard extends StatelessWidget {
   const CurrentWeatherCard({
