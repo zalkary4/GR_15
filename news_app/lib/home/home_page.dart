@@ -33,28 +33,34 @@ class _HomePageState extends State<HomePage> {
             return Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: SizedBox(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Column(
                   children: [
-                    Expanded(
-                      flex: 2,
-                      child: Image.network(
-                        NewModel.image,
-                        fit: BoxFit.fitWidth,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Image.network(
+                            NewModel.image,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        const SizedBox(width: 15),
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(NewModel.dateTime),
+                              Text(NewModel.description),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 15),
-                    Expanded(
-                      flex: 3,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(NewModel.dateTime),
-                          Text(NewModel.description),
-                        ],
-                      ),
-                    ),
+                    const SizedBox(height: 7),
+                    const Divider(color: AppColors.black),
                   ],
                 ),
               ),
