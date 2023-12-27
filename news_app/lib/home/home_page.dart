@@ -24,40 +24,43 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: newsFakeList.length,
-        itemBuilder: (context, index) {
-          final NewModel = newsFakeList[index];
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: SizedBox(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Image.network(
-                      NewModel.image,
-                      fit: BoxFit.cover,
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: ListView.builder(
+          itemCount: newsFakeList.length,
+          itemBuilder: (context, index) {
+            final NewModel = newsFakeList[index];
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: SizedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Image.network(
+                        NewModel.image,
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 15),
-                  Expanded(
-                    flex: 3,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(NewModel.dateTime),
-                        Text(NewModel.description),
-                      ],
+                    const SizedBox(width: 15),
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(NewModel.dateTime),
+                          Text(NewModel.description),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
