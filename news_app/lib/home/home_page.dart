@@ -19,14 +19,16 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert
-            ),
+            icon: const Icon(Icons.more_vert),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){},
-      child: Icon(Icons.) ,),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: AppColors.orange,
+        foregroundColor: AppColors.white,
+        child: const Icon(Icons.search),
+      ),
     );
   }
 }
