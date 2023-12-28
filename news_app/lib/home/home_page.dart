@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/app_colors.dart';
 import 'package:news_app/model/news_model.dart';
+import 'package:news_app/widgets/news_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,48 +31,7 @@ class _HomePageState extends State<HomePage> {
           itemCount: newsFakeList.length,
           itemBuilder: (context, index) {
             final NewModel = newsFakeList[index];
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: SizedBox(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          flex: 2,
-                          child: Image.network(
-                            NewModel.image,
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                NewModel.title,
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                              Text(NewModel.description),
-                              Text(
-                                NewModel.dateTime,
-                                style: Theme.of(context).textTheme.titleSmall,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 7),
-                    const Divider(color: AppColors.black),
-                  ],
-                ),
-              ),
-            );
+            return NewcCard(NewModel);
           },
         ),
       ),
