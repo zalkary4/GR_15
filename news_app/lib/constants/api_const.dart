@@ -1,1 +1,3 @@
-class ApiClass {}
+class ApiClass {
+  final exampleData = {};
+}
