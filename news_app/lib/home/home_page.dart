@@ -52,8 +52,9 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(NewModel.dateTime),
+                              Text(NewModel.title),
                               Text(NewModel.description),
+                              Text(NewModel.dateTime),
                             ],
                           ),
                         ),
