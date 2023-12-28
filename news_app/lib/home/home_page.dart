@@ -52,9 +52,15 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(NewModel.title),
+                              Text(
+                                NewModel.title,
+                                style: Theme.of(context).textTheme.titleMedium,
+                              ),
                               Text(NewModel.description),
-                              Text(NewModel.dateTime),
+                              Text(
+                                NewModel.dateTime,
+                                style: Theme.of(context).textTheme.titleSmall,
+                              ),
                             ],
                           ),
                         ),
