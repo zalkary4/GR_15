@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/app_colors.dart';
-import 'package:news_app/model/news_model.dart';
+import 'package:news_app/model/article.dart';
 
-class NewcCard extends StatelessWidget {
-  const NewcCard(this.newModel, {super.key});
+class NewsCard extends StatelessWidget {
+  const NewsCard(this.article, {super.key});
 
-  final NewModel newModel;
+  final Article article;
 
   @override
   Widget build(BuildContext context) {

@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
           itemCount: newsFakeList.length,
           itemBuilder: (context, index) {
             final NewModel = newsFakeList[index];
-            return NewcCard(NewModel);
+            return NewsCard(NewModel);
           },
         ),
       ),
