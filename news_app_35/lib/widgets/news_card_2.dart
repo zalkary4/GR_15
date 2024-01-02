@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/constants/app_colors.dart';
@@ -23,6 +25,10 @@ class NewsCard2 extends StatelessWidget {
                 child: Image.network(
                   article.urlToImage ??
                       'https://t3.ftcdn.net/jpg/03/27/55/60/360_F_327556002_99c7QmZmwocLwF7ywQ68ChZaBry1DbtD.jpg',
+                  errorBuilder: (context, error, stackTrace) {
+                    log('error $error, $stackTrace');
+                    return SizedBox(height: 20);
+                  },
                   fit: BoxFit.fitHeight,
                 ),
               ),
