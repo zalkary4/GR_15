@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             )
-          : const CircularProgressIndicator(),
+          : const Center(child: CircularProgressIndicator()),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: AppColors.orange,
