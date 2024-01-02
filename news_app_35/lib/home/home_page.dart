@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-
       body: ListView.builder(
         padding: const EdgeInsets.all(20),
         itemCount: fakeData.articles.length,
@@ -42,27 +41,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               );
             },
+            child: NewsCard2(
+              fakeData.articles[index],
+            ),
           );
         },
       ),
-      // body: ListView.builder(
-      //   padding: const EdgeInsets.all(20),
-      //   itemCount: fakeData.articles.length,
-      //   itemBuilder: (context, index) {
-      //     return InkWell(
-      //       onTap: () {
-      //         Navigator.push<void>(
-      //           context,
-      //           MaterialPageRoute<void>(
-      //             builder: (BuildContext context) => ArticleDetailPage(
-      //               fakeData.articles[index],
-      //             ),
-      //           ),
-      //         );
-      //       },
-      //     );
-      //   },
-      // ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: AppColors.orange,
