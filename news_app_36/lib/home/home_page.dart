@@ -17,14 +17,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  ArticleData? data;
+  ArticleData? articleData;
 
   ///bot
   final Dio dio = Dio();
-
-  /// link
   Future<void> getData() async {
     final response = await dio.get(link);
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      final body = response.data;
+      articleData = ArticleData.fromJson(body);
+    }
   }
 
   @override
