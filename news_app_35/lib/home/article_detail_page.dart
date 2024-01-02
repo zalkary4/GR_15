@@ -11,10 +11,7 @@ class ArticleDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(article.title)),
       body: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 20,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children: [
           Text(
             article.title,
@@ -30,15 +27,17 @@ class ArticleDetailPage extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           if (article.content != null) Text(article.content!),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(article.author ?? ''),
-              Text(
-                DateFormat('y MMMM d').format(article.publishedAt),
-              ),
+              Expanded(child: Text(article.author ?? '')),
+              const SizedBox(width: 20),
+              Text(DateFormat('y MMMM d').format(article.publishedAt)),
             ],
-          )
+          ),
+          const SizedBox(height: 10),
+          Text(article.url),
         ],
       ),
     );
