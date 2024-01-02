@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:news_app/constants/app_colors.dart';
 import 'package:news_app/model/article.dart';
 
@@ -36,7 +37,8 @@ class NewsCard2 extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
-                      article.publishedAt.toString(),
+                      DateFormat('y MMMM d').format(article.publishedAt),
+                      // article.publishedAt.toString(),
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ],
