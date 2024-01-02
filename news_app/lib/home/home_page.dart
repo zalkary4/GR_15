@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/app_colors.dart';
-import 'package:news_app/model/news_model.dart';
-import 'package:news_app/widgets/news_card.dart';
+import 'package:news_app/home/article_detail_page.dart';
+import 'package:news_app/model/fake_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,15 +25,23 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Padding(
+      body: ListView.builder(
         padding: const EdgeInsets.all(20),
-        child: ListView.builder(
-          itemCount: newsFakeList.length,
-          itemBuilder: (context, index) {
-            final NewModel = newsFakeList[index];
-            return NewsCard(NewModel);
-          },
-        ),
+        itemCount: fakeData.articles.length,
+        itemBuilder: (context, index) {
+          return InkWell(
+            onTap: () {
+              Navigator.push<void>(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (BuildContext context) => ArticleDetailPage(
+                    fakeData.articles[index],
+                  ),
+                ),
+              );
+            },
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

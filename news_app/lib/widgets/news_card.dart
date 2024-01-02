@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:news_app/constants/app_colors.dart';
 import 'package:news_app/model/article.dart';
 
@@ -21,7 +22,7 @@ class NewsCard extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Image.network(
-                    newModel.image,
+                    article.urlToImage ?? 'rrr',
                     fit: BoxFit.fitWidth,
                   ),
                 ),
@@ -32,12 +33,13 @@ class NewsCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        newModel.title,
+                        article.title,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
-                      Text(newModel.description),
+                      // Text(article.description),
                       Text(
-                        newModel.dateTime,
+                        // article.publishedAt.toString(),
+                        DateFormat('y MMMM d').format(article.publishedAt),
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
                     ],
