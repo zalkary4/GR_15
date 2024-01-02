@@ -37,9 +37,6 @@ class NewsCard2 extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
-                      article.description,
-                    ),
-                    Text(
                       article.publishedAt.toString(),
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
