@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/app_colors.dart';
+import 'package:news_app/model/article.dart';
 import 'package:news_app/model/news_model.dart';
 
 class NewsCard2 extends StatelessWidget {
-  const NewsCard2(this.newModel, {super.key});
+  const NewsCard2(this.article, {super.key});
 
-  final NewModel newModel;
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,8 @@ class NewsCard2 extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Image.network(
-                  newModel.image,
+                  article.urlToImage ??
+                      'https://t3.ftcdn.net/jpg/03/27/55/60/360_F_327556002_99c7QmZmwocLwF7ywQ68ChZaBry1DbtD.jpg',
                   fit: BoxFit.fitHeight,
                 ),
               ),
@@ -31,14 +33,14 @@ class NewsCard2 extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      newModel.title,
+                      article.title,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
-                      newModel.description,
+                      article.description,
                     ),
                     Text(
-                      newModel.dateTime,
+                      article.description.toString(),
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ],
