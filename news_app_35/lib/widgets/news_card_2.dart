@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/app_colors.dart';
 import 'package:news_app/model/article.dart';
-import 'package:news_app/model/news_model.dart';
 
 class NewsCard2 extends StatelessWidget {
   const NewsCard2(this.article, {super.key});
