@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:news_app/constants/app_colors.dart';
 import 'package:news_app/home/article_detail_page.dart';
 import 'package:news_app/model/atricle_data.dart';
-import 'package:news_app/model/fake_data.dart';
 import 'package:news_app/widgets/news_card_2.dart';
 
 const link =
@@ -26,7 +25,14 @@ class _HomePageState extends State<HomePage> {
     if (response.statusCode == 200 || response.statusCode == 201) {
       final body = response.data;
       articleData = ArticleData.fromJson(body);
+      setState(() {});
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
   }
 
   @override
@@ -43,27 +49,29 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(20),
-        itemCount: fakeData.articles.length,
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {
-              Navigator.push<void>(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) => ArticleDetailPage(
-                    fakeData.articles[index],
+      body: articleData != null
+          ? ListView.builder(
+              padding: const EdgeInsets.all(20),
+              itemCount: articleData?.articles.length,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push<void>(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => ArticleDetailPage(
+                          articleData!.articles[index],
+                        ),
+                      ),
+                    );
+                  },
+                  child: NewsCard2(
+                    articleData!.articles[index],
                   ),
-                ),
-              );
-            },
-            child: NewsCard2(
-              fakeData.articles[index],
-            ),
-          );
-        },
-      ),
+                );
+              },
+            )
+          : const CircularProgressIndicator(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: AppColors.orange,
