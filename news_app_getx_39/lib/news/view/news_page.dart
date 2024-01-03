@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart';
 import 'package:news_app_getx/news/controller/news_controller.dart';
 import 'package:news_app_getx/widgets/news_card.dart';
 
-class NewsPage extends StatelessWidget {
-  const NewsPage(this.controller, {super.key});
-  final NewsController controller;
+class NewsPage extends GetView<NewsController> {
+  const NewsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    NewsController controller = Get.put(NewsController(Client()));
     return Scaffold(
       appBar: AppBar(
         title: const Text('News'),
+        actions: [
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(Icons.more_vert),
+          // ),
+          PopupMenuButton(itemBuilder: (BuildContext context){
+            return countries.map((key, value) => null)
+          })
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 10, 20, 30),

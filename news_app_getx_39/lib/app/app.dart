@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:news_app_getx/news/controller/news_controller.dart';
 import 'package:news_app_getx/news/view/news_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,7 +12,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: NewsPage(NewsController(Client())),
+      home: NewsPage(),
     );
   }
 }
