@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wheater_app/constants/assets_constants.dart';
-import 'package:wheater_app/constants/colors_const.dart';
+import 'package:wheater_app/constants/colors_cons.dart';
 import 'package:wheater_app/home/home_body.dart';
 
 class HomePage extends StatefulWidget {

@@ -25,7 +25,9 @@ class _HomePageState extends State<HomePage> {
               fontFamily: 'Sofia',
             ),
           ),
-          Image.asset('assets/images/venice.jpg')
+          Image.asset('assets/images/venice.jpg'),
+          Image.asset('assets/icons/mail.png'),
+          Image.asset('assets/icons/phone.png'),
         ],
       ),
     );

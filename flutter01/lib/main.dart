@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int san = 7;
+  int san = 100000;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +30,7 @@ class _MyAppState extends State<MyApp> {
               Text('Hello'),
               Text(
                 '$san',
-                style: TextStyle(
-                  fontSize: 38,
-                ),
+                style: const TextStyle(fontSize: 38),
               ),
             ],
           ),
