@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Work with assets'),
+        title: const Text('Work with assets'),
       ),
       body: Image.asset('assets/venice.jpg'),
     );
