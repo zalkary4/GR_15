@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:http/http.dart';
+import 'package:news_app_getx/models/news_data.dart';
 
 const apiLink =
     'https://newsapi.org/v2/top-headlines?country=us&apiKey=102ada0be929467a9800798380b1aef5';
@@ -12,6 +15,8 @@ class NewsController extends GetxController {
   RxBool isLoading = false.obs;
   RxString data = ''.obs;
   RxString error = ''.obs;
+  Rx<NewsData?> newsData = Rx<NewsData?>(null);
+
   Future<void> getNews() async {
     try {
       isLoading.value = true;
@@ -20,6 +25,8 @@ class NewsController extends GetxController {
 
       isLoading.value = false;
       if (response.statusCode == 200) {
+        final decodedData = jsonDecode(response.body) as Map<String, dynamic>;
+        newsData.value = NewsData.fromJson(decodedData);
         data.value = response.body;
       } else {
         error.value = 'something went wrong';
