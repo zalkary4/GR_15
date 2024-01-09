@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:news_app_getx/models/news_data.dart';
 
-const apiLink =
-    'https://newsapi.org/v2/top-headlines?country=us&apiKey=102ada0be929467a9800798380b1aef5';
+// const apiLink =
+//     'https://newsapi.org/v2/top-headlines?country=us&apiKey=102ada0be929467a9800798380b1aef5';
 
 class NewsController extends GetxController {
   NewsController(this.http);
@@ -21,7 +21,7 @@ class NewsController extends GetxController {
   Future<void> getNews() async {
     try {
       isLoading.value = true;
-      final uri = Uri.parse(apiLink);
+      final uri = Uri.parse(getUrl());
       final response = await http.get(uri);
 
       isLoading.value = false;

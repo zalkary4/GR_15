@@ -14,13 +14,23 @@ class NewsPage extends GetView<NewsController> {
       appBar: AppBar(
         title: const Text('News'),
         actions: [
-          // IconButton(
-          //   onPressed: () {},
-          //   icon: const Icon(Icons.more_vert),
-          // ),
-          PopupMenuButton(itemBuilder: (BuildContext context){
-            return countries.map((key, value) => null)
-          })
+          PopupMenuButton(
+            icon: const Icon(Icons.more_vert),
+            onSelected: (v) {
+              controller.changeCountryCode(v);
+              controller.getNews();
+            },
+            itemBuilder: (BuildContext context) {
+              return countries.entries
+                  .map(
+                    (e) => PopupMenuItem(
+                      value: e.key,
+                      child: Text(e.value),
+                    ),
+                  )
+                  .toList();
+            },
+          )
         ],
       ),
       body: Padding(
