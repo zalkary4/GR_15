@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
+import 'package:news_app_getx/models/country.dart';
 import 'package:news_app_getx/news/controller/news_controller.dart';
 import 'package:news_app_getx/widgets/news_card.dart';
 
@@ -17,15 +18,15 @@ class NewsPage extends GetView<NewsController> {
           PopupMenuButton(
             icon: const Icon(Icons.more_vert),
             onSelected: (v) {
-              controller.changeCountryCode(v);
+              controller.changeCountry(v);
               controller.getNews();
             },
             itemBuilder: (BuildContext context) {
-              return countries.entries
+              return countries
                   .map(
                     (e) => PopupMenuItem(
-                      value: e.key,
-                      child: Text(e.value),
+                      value: e,
+                      child: Text(e.name),
                     ),
                   )
                   .toList();
@@ -45,7 +46,8 @@ class NewsPage extends GetView<NewsController> {
               } else if (controller.newsData.value != null) {
                 return Localizations.override(
                   context: context,
-                  locale: Locale(controller.countryCode.value),
+                  // locale: Locale('ar'),
+                  locale: Locale(controller.country.value.langCode),
                   child: ListView.builder(
                       itemCount: controller.newsData.value!.articles.length,
                       itemBuilder: (BuildContext context, int index) {
@@ -72,12 +74,17 @@ class NewsPage extends GetView<NewsController> {
   }
 }
 
-final countries = {
-  'us': 'United State',
-  'tr': 'Turkey',
-  'in': 'India',
-  'de': 'Germany',
-  'kr': 'Korea',
-  'ru': 'Russia',
-  'ae': 'Saudi Arabia',
-};
+
+
+
+
+
+// final countries = {
+//   'us': 'United State',
+//   'tr': 'Turkey',
+//   'in': 'India',
+//   'de': 'Germany',
+//   'kr': 'Korea',
+//   'ru': 'Russia',
+//   'ae': 'Saudi Arabia',
+// };

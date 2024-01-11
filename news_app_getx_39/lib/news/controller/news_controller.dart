@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart';
+import 'package:news_app_getx/models/country.dart';
 import 'package:news_app_getx/models/news_data.dart';
 
 // const apiLink =
@@ -16,7 +17,7 @@ class NewsController extends GetxController {
   RxString data = ''.obs;
   RxString error = ''.obs;
   Rx<NewsData?> newsData = Rx<NewsData?>(null);
-  RxString countryCode = 'us'.obs;
+  Rx<Country> country = countries[0].obs;
 
   Future<void> getNews() async {
     try {
@@ -37,12 +38,12 @@ class NewsController extends GetxController {
     }
   }
 
-  void changeCountryCode(String code) {
-    countryCode.value = code;
+  void changeCountry(Country value) {
+    country.value = value;
     getNews();
   }
 
   String getUrl() {
-    return 'https://newsapi.org/v2/top-headlines?country=$countryCode&apiKey=102ada0be929467a9800798380b1aef5';
+    return 'https://newsapi.org/v2/top-headlines?country=${country.value.code}&apiKey=102ada0be929467a9800798380b1aef5';
   }
 }

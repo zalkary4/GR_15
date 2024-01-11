@@ -55,5 +55,5 @@ final List<Country> countries = <Country>[
     name: 'Chine',
     code: 'cn',
     langCode: 'zh',
-  )
+  ),
 ];
