@@ -43,13 +43,17 @@ class NewsPage extends GetView<NewsController> {
                   controller.error.value.isEmpty) {
                 return const CircularProgressIndicator();
               } else if (controller.newsData.value != null) {
-                return ListView.builder(
-                    itemCount: controller.newsData.value!.articles.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      final article =
-                          controller.newsData.value!.articles[index];
-                      return NewsCard2(article);
-                    });
+                return Localizations.override(
+                  context: context,
+                  locale: Locale(controller.countryCode.value),
+                  child: ListView.builder(
+                      itemCount: controller.newsData.value!.articles.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final article =
+                            controller.newsData.value!.articles[index];
+                        return NewsCard2(article);
+                      }),
+                );
               } else if (controller.data.value.isNotEmpty) {
                 return Text(controller.error.value);
               } else {
@@ -75,5 +79,5 @@ final countries = {
   'de': 'Germany',
   'kr': 'Korea',
   'ru': 'Russia',
-  'ar': 'Saudi Arabia',
+  'ae': 'Saudi Arabia',
 };
