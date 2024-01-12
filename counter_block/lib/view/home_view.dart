@@ -1,16 +1,18 @@
+import 'package:counter_block/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
+        title: Text('title'),
       ),
       body: Center(
         child: Column(
@@ -20,16 +22,26 @@ class MyHomePage extends StatelessWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '0',
+              context.watch<CounterCubit>().state.toString(),
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          FloatingActionButton(
+            onPressed: context.read<CounterCubit>().increment,
+            tooltip: 'Increment',
+            child: const Icon(Icons.exposure_plus_1),
+          ),
+          FloatingActionButton(
+            onPressed: context.read<CounterCubit>().decrement,
+            tooltip: 'Increment',
+            child: const Icon(Icons.exposure_minus_1),
+          ),
+        ],
       ),
     );
   }
