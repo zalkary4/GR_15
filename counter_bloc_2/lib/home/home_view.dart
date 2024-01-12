@@ -42,7 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push<void>(
                   context,
                   MaterialPageRoute<void>(
-                    builder: (BuildContext context) => const SecondPage(),
+                    builder: (BuildContext context) =>
+                        SecondPage(count: _counter),
                   ),
                 );
               },

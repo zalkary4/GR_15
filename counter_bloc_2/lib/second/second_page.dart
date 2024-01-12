@@ -3,18 +3,17 @@ import 'package:flutter/material.dart';
 class SecondPage extends StatefulWidget {
   const SecondPage({
     super.key,
+    required this.count,
   });
-
+  final int count;
   @override
   State<SecondPage> createState() => _SecondPageState();
 }
 
 class _SecondPageState extends State<SecondPage> {
-  int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      widget.count + 1;
     });
   }
 
@@ -33,7 +32,7 @@ class _SecondPageState extends State<SecondPage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '${widget.count}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
