@@ -11,9 +11,17 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
-  void _incrementCounter() {
+  int _counter = 0;
+  @override
+  void initState() {
+    _counter = widget.count;
+    // TODO: implement initState
+    super.initState();
+  }
+
+  void _decrementCounter() {
     setState(() {
-      widget.count + 1;
+      _counter--;
     });
   }
 
@@ -32,7 +40,7 @@ class _SecondPageState extends State<SecondPage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${widget.count}',
+              '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
@@ -43,9 +51,9 @@ class _SecondPageState extends State<SecondPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _decrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.remove),
       ),
     );
   }
