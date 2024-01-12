@@ -44,8 +44,10 @@ class _SecondPageState extends State<SecondPage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: const Text('Go to second page'),
+              onPressed: () {
+                Navigator.pop(context, _counter);
+              },
+              child: const Text('Go back'),
             )
           ],
         ),

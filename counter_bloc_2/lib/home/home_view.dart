@@ -38,14 +38,16 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push<void>(
+              onPressed: () async {
+                final result = await Navigator.push<int>(
                   context,
-                  MaterialPageRoute<void>(
+                  MaterialPageRoute<int>(
                     builder: (BuildContext context) =>
                         SecondPage(count: _counter),
                   ),
                 );
+                _counter = result ?? 0;
+                setState(() {});
               },
               child: const Text('Go to second page'),
             )
