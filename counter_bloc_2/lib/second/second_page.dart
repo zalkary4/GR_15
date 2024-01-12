@@ -1,16 +1,15 @@
-import 'package:counter_bloc_2/second/second_page.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
+class SecondPage extends StatefulWidget {
+  const SecondPage({
     super.key,
   });
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SecondPage> createState() => _SecondPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SecondPageState extends State<SecondPage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -24,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('First Page'),
+        title: const Text('Second Page'),
       ),
       body: Center(
         child: Column(
@@ -38,14 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push<void>(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (BuildContext context) => const SecondPage(),
-                  ),
-                );
-              },
+              onPressed: () {},
               child: const Text('Go to second page'),
             )
           ],
