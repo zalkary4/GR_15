@@ -1,4 +1,5 @@
 import 'package:bloc_3/bloc/counter_bloc.dart';
+import 'package:bloc_3/second/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,6 +25,17 @@ class MyHomePage extends StatelessWidget {
             Text(
               '${context.watch<CounterCubit>().state}',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const SecondPage(),
+                  ),
+                );
+              },
+              child: const Text('GO Second Page'),
             ),
           ],
         ),
