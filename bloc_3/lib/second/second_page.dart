@@ -23,8 +23,10 @@ class SecondPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.remove),
+        onPressed: () {
+          context.read<CounterCubit>().decrement();
+        },
+        child: const Icon(Icons.remove),
       ),
     );
   }
