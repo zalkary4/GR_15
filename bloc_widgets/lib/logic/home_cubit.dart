@@ -16,6 +16,9 @@ class HomeCubit extends Cubit<HomeState> {
       log(parsedValue.toString());
       emit(HomeSuccessState());
       // i = parsedValue;
-    } catch (e) {}
+    } catch (e) {
+      log(e.toString());
+      emit(HomeErrorState());
+    }
   }
 }
