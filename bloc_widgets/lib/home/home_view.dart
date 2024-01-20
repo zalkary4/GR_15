@@ -14,11 +14,11 @@ class HomeView extends StatelessWidget {
           BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state) {
               if (state is HomeInitialState) {
-                return Text('Inintial');
+                return const Text('Inintial');
               } else if (state is HomeLoadingState) {
                 return const CircularProgressIndicator();
               } else if (state is HomeSuccessState) {
-                return const Text('Success');
+                return const Text('success');
               } else if (state is HomeErrorState) {
                 return const Text('error');
               } else {
