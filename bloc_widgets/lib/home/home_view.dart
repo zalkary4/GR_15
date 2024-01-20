@@ -13,14 +13,16 @@ class HomeView extends StatelessWidget {
         children: [
           BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state) {
-              if (state is HomeLoadingState) {
-                return CircularProgressIndicator();
+              if (state is HomeInitialState) {
+                return Text('Inintial');
+              } else if (state is HomeLoadingState) {
+                return const CircularProgressIndicator();
               } else if (state is HomeSuccessState) {
-                return Text('Success');
+                return const Text('Success');
               } else if (state is HomeErrorState) {
-                return Text('error');
+                return const Text('error');
               } else {
-                return Text('unknown');
+                return const Text('unknown');
               }
               // return Text(state.toString());
             },
@@ -31,7 +33,7 @@ class HomeView extends StatelessWidget {
                 final homeCubit = context.read<HomeCubit>();
                 homeCubit.parseNumber('234');
               },
-              child: Text('parse'),
+              child: const Text('parse'),
             ),
           ),
         ],

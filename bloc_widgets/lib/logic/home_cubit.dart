@@ -7,7 +7,7 @@ part 'home_state.dart';
 var i = 20;
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(HomeLoadingState());
+  HomeCubit() : super(HomeInitialState());
   Future<void> parseNumber(String value) async {
     emit(HomeLoadingState());
     await Future.delayed(const Duration(seconds: 1));
