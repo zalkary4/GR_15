@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'home_state.dart';
@@ -9,6 +11,11 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> parseNumber(String value) async {
     emit(HomeLoadingState());
     await Future.delayed(const Duration(seconds: 1));
-    try {} catch (e) {}
+    try {
+      final parsedValue = num.parse(value);
+      log(parsedValue.toString());
+      emit(HomeSuccessState());
+      // i = parsedValue;
+    } catch (e) {}
   }
 }
