@@ -9,5 +9,6 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> parseNumber(String value) async {
     emit(HomeLoadingState());
     await Future.delayed(const Duration(seconds: 1));
+    try {} catch (e) {}
   }
 }
