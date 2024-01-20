@@ -1,3 +1,12 @@
 part of 'home_cubit.dart';
 
-var a = i + 10;
+abstract class HomeState {}
+
+class HomeLoadingState extends HomeState {}
+
+class HomeSuccessState extends HomeState {}
+
+class HomeErrorState extends HomeState {
+  HomeErrorState(this.message);
+  final String message;
+}
