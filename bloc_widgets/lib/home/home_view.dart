@@ -17,6 +17,20 @@ class HomeView extends StatelessWidget {
               builder: (context) => AlertDialog(
                 title: const Text('Something wrong'),
                 content: Text('Value is ${state.message}'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('data'),
+                  ),
+                  // TextButton(
+                  //   onPressed: () {
+                  //     Navigator.of(context).pop();
+                  //   },
+                  //   child: const Text('Ok'),
+                  // ),
+                ],
               ),
             );
           }
