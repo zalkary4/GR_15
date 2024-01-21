@@ -11,4 +11,7 @@ class HomeSuccessState extends HomeState {
   final num data;
 }
 
-class HomeErrorState extends HomeState {}
+class HomeErrorState extends HomeState {
+  HomeErrorState(this.message);
+  final String message;
+}

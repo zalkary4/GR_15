@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'home_state.dart';
@@ -18,7 +19,7 @@ class HomeCubit extends Cubit<HomeState> {
       // i = parsedValue;
     } catch (e) {
       log(e.toString());
-      emit(HomeErrorState());
+      emit(HomeErrorState(e.toString()));
     }
   }
 }

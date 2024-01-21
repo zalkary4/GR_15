@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
               } else if (state is HomeSuccessState) {
                 return Text('success ${state.data}');
               } else if (state is HomeErrorState) {
-                return const Text('error');
+                return Text('error, ${state.message}');
               } else {
                 return const Text('unknown');
               }
@@ -31,7 +31,7 @@ class HomeView extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 final homeCubit = context.read<HomeCubit>();
-                homeCubit.parseNumber('234');
+                homeCubit.parseNumber('234e');
               },
               child: const Text('parse'),
             ),
