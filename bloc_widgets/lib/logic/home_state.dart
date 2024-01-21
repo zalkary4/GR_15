@@ -6,6 +6,9 @@ class HomeInitialState extends HomeState {}
 
 class HomeLoadingState extends HomeState {}
 
-class HomeSuccessState extends HomeState {}
+class HomeSuccessState extends HomeState {
+  HomeSuccessState(this.data);
+  final num data;
+}
 
 class HomeErrorState extends HomeState {}

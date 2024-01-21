@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
               } else if (state is HomeLoadingState) {
                 return const CircularProgressIndicator();
               } else if (state is HomeSuccessState) {
-                return const Text('success');
+                return Text('success ${state.data}');
               } else if (state is HomeErrorState) {
                 return const Text('error');
               } else {

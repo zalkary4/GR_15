@@ -14,7 +14,7 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       final parsedValue = num.parse(value);
       log(parsedValue.toString());
-      emit(HomeSuccessState());
+      emit(HomeSuccessState(parsedValue));
       // i = parsedValue;
     } catch (e) {
       log(e.toString());
