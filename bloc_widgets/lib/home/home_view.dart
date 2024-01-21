@@ -15,7 +15,7 @@ class HomeView extends StatelessWidget {
             showAdaptiveDialog(
               context: context,
               builder: (context) => AlertDialog(
-                title: Text('Something wrong'),
+                title: const Text('Something wrong'),
                 content: Text('Value is ${state.message}'),
               ),
             );
