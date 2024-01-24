@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeCubit(),
       child: MaterialApp(
-        title: 'Flutter Demo!',
+        title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
