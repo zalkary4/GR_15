@@ -30,6 +30,12 @@ class PostBloc extends Bloc<PostEvent, PostState> {
           ),
         );
       }
+      final posts = await _fetchPost(state.posts.length);
+      if (posts.isEmpty) {
+        return emit(
+          state.copyWith(hasReachedMax: true),
+        );
+      } else {}
     } catch (e) {}
   }
 
