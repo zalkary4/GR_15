@@ -16,8 +16,24 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     on<PostEvent>((event, emit) {});
   }
   final Client httpClient;
+  Future<void> _onPostFetched(
+      PostsFetched event, Emitter<PostState> emit) async {
+    if (state.hasReachedMax) return;
+    try {
+      if (state.status == PostStatus.initial) {
+        final posts = await _fetchPost();
+        return emit(
+          state.copyWith(
+            status: PostStatus.success,
+            posts: posts,
+            hasReachedMax: false,
+          ),
+        );
+      }
+    } catch (e) {}
+  }
 
-  Future<List<Post>> _fetchStatus([int startIndex = 0]) async {
+  Future<List<Post>> _fetchPost([int startIndex = 0]) async {
     final response = await httpClient.get(
       Uri.https(
         'jsonplaceholder.typicode.com',
