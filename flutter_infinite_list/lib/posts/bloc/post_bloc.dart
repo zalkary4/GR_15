@@ -35,8 +35,18 @@ class PostBloc extends Bloc<PostEvent, PostState> {
         return emit(
           state.copyWith(hasReachedMax: true),
         );
-      } else {}
-    } catch (e) {}
+      } else {
+        return emit(
+          state.copyWith(
+            status: PostStatus.success,
+            posts: List.of(state.posts)..addAll(posts),
+            hasReachedMax: false,
+          ),
+        );
+      }
+    } catch (e) {
+      emit(state.copyWith(status: PostStatus.failure));
+    }
   }
 
   Future<List<Post>> _fetchPost([int startIndex = 0]) async {
