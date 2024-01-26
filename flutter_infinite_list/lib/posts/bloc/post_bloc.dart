@@ -13,7 +13,7 @@ const throttleDuration = Duration(milliseconds: 100);
 
 class PostBloc extends Bloc<PostEvent, PostState> {
   PostBloc({required this.httpClient}) : super(PostState()) {
-    on<PostEvent>((event, emit) {});
+    on<PostsFetched>((_onPostFetched, emit) {});
   }
   final Client httpClient;
   Future<void> _onPostFetched(
