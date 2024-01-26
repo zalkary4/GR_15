@@ -12,23 +12,23 @@ const _postLimit = 20;
 const throttleDuration = Duration(milliseconds: 100);
 
 class PostBloc extends Bloc<PostEvent, PostState> {
-  PostBloc({required this.httpClient}) : super(PostState()) {
-    on<PostsFetched>((_onPostFetched, emit) {});
+  PostBloc({
+    required this.httpClient,
+  }) : super(PostState()) {
+    on<PostFetched>(_onPostFetched);
   }
   final Client httpClient;
   Future<void> _onPostFetched(
-      PostsFetched event, Emitter<PostState> emit) async {
+      PostFetched event, Emitter<PostState> emit) async {
     if (state.hasReachedMax) return;
     try {
       if (state.status == PostStatus.initial) {
         final posts = await _fetchPost();
-        return emit(
-          state.copyWith(
-            status: PostStatus.success,
-            posts: posts,
-            hasReachedMax: false,
-          ),
-        );
+        return emit(state.copyWith(
+          status: PostStatus.success,
+          posts: posts,
+          hasReachedMax: false,
+        ));
       }
       final posts = await _fetchPost(state.posts.length);
       if (posts.isEmpty) {
