@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_infinite_list/posts/bloc/post_bloc.dart';
+import 'package:flutter_infinite_list/posts/widgets/bottom_loader.dart';
+import 'package:flutter_infinite_list/posts/widgets/post_list_item.dart';
 
 class PostList extends StatefulWidget {
   const PostList({super.key});
@@ -21,28 +23,34 @@ class _PostListState extends State<PostList> {
   Widget build(BuildContext context) {
     return BlocBuilder<PostBloc, PostState>(
       builder: (context, state) {
-       return switch (state.status) {
-        PostStatus.failure=>Center(child: Text('failed to fetch status'),
-        PostStatus.initial=>Center(
-          child: CircularProgressIndicator(),
-        ), 
-        PostStatus.success=>state.posts.isEmpty? const Center(child: Text('no posts')):
-        ListView.builder(itemBuilder:(BuilContext context, int index){
-          return index >=state.posts.length
-          ? const BottomLoader()
-          : PostListItem(post: state.posts.[index],);
-        }
-        itemCount: state.hasReachedMax? state.posts.length: state.posts.lenght+1,
-        controler: _scrollController,
-        ),
-        ),
-       };
+        return switch (state.status) {
+          PostStatus.failure =>
+            const Center(child: Text('failed to fetch status')),
+          PostStatus.initial =>
+            const Center(child: CircularProgressIndicator()),
+          PostStatus.success || PostStatus.loading => state.posts.isEmpty
+              ? const Center(child: Text('no posts'))
+              : ListView.builder(
+                  itemBuilder: (BuildContext context, int index) {
+                    return index >= state.posts.length
+                        ? const BottomLoader()
+                        : PostItem(state.posts[index]);
+                  },
+                  itemCount: state.hasReachedMax
+                      ? state.posts.length
+                      : state.posts.length + 1,
+                  controller: _scrollController,
+                ),
+        };
       },
     );
   }
 
   void _onScroll() {
-    if (_isBottom) context.read<PostBloc>().add(PostFetched());
+    final bloc = context.read<PostBloc>();
+    if (bloc.state.status != PostStatus.loading) {
+      if (_isBottom) context.read<PostBloc>().add(PostFetched());
+    }
   }
 
   bool get _isBottom {

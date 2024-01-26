@@ -1,6 +1,6 @@
 part of 'post_bloc.dart';
 
-enum PostStatus { initial, success, failure }
+enum PostStatus { initial, success, failure, loading }
 
 final class PostState extends Equatable {
   const PostState({
@@ -23,6 +23,11 @@ final class PostState extends Equatable {
       posts: posts ?? this.posts,
       hasReachedMax: hasReachedMax ?? this.hasReachedMax,
     );
+  }
+
+  @override
+  String toString() {
+    return '''PostState { status: $status, hasReachedMax: $hasReachedMax, posts: ${posts.length} }''';
   }
 
   @override

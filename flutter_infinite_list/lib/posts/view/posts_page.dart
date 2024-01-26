@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_infinite_list/posts/bloc/post_bloc.dart';
+import 'package:flutter_infinite_list/posts/view/posts_list.dart';
 import 'package:http/http.dart';
 
 class PostPage extends StatelessWidget {
@@ -10,9 +11,30 @@ class PostPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-        create: (context) => PostBloc(httpClient: Client()..add(PostFetched())),
-        child: const Text('Post'),
+        create: (context) => PostBloc(httpClient: Client())..add(PostFetched()),
+        child: const PostList(),
       ),
     );
   }
 }
+
+
+// import 'package:flutter/material.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_infinite_list/posts/bloc/post_bloc.dart';
+// import 'package:flutter_infinite_list/posts/view/posts_list.dart';
+// import 'package:http/http.dart';
+
+// class PostPage extends StatelessWidget {
+//   const PostPage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: BlocProvider(
+//         create: (context) => PostBloc(httpClient: Client())..add(PostFetched()),
+//         child: const PostList(),
+//       ),
+//     );
+//   }
+// }
