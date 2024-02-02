@@ -18,10 +18,10 @@ class PostBloc extends Bloc<PostEvent, PostState> {
 
   final Client httpClient;
 
-  Future<void> _onPostFetched(PostFetched event, Emitter<PostState> emit) async {
+  Future<void> _onPostFetched(
+      PostFetched event, Emitter<PostState> emit) async {
     if (state.hasReachedMax && state.status == PostStatus.loading) return;
     try {
-      
       if (state.status == PostStatus.initial) {
         final posts = await _fetchPosts();
         return emit(state.copyWith(
@@ -30,7 +30,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
           hasReachedMax: false,
         ));
       }
-      
+
       emit(state.copyWith(status: PostStatus.loading));
 
       final posts = await _fetchPosts(state.posts.length);
